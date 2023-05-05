@@ -1,0 +1,11 @@
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\bin\Debug\Programming.exe.config
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\bin\Debug\Programming.exe
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\bin\Debug\Programming.pdb
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.csproj.AssemblyReference.cache
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.csproj.SuggestedBindingRedirects.cache
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.Properties.Resources.resources
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.View.MainForm.resources
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.csproj.GenerateResource.cache
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.csproj.CoreCompileInputs.cache
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.exe
+C:\Users\Stell\Desktop\Programming2-develop\src\Programming\Programming\obj\Debug\Programming.pdb
