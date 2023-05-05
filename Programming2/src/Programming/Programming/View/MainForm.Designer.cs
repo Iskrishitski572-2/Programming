@@ -152,6 +152,7 @@
             // 
             // weekdayGroupBox
             // 
+            this.weekdayGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.weekdayGroupBox.Controls.Add(this.resultParsingLabel);
             this.weekdayGroupBox.Controls.Add(this.typeValueForParsingLabel);
             this.weekdayGroupBox.Controls.Add(this.parseButton);
@@ -169,12 +170,12 @@
             this.resultParsingLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resultParsingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.resultParsingLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.resultParsingLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.resultParsingLabel.Location = new System.Drawing.Point(12, 95);
             this.resultParsingLabel.Name = "resultParsingLabel";
             this.resultParsingLabel.Size = new System.Drawing.Size(342, 58);
             this.resultParsingLabel.TabIndex = 7;
-            this.resultParsingLabel.Text = "Введите день недели";
+            this.resultParsingLabel.Text = "Введите день недели:";
             // 
             // typeValueForParsingLabel
             // 
@@ -208,6 +209,7 @@
             // 
             // seasonGroupBox
             // 
+            this.seasonGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.seasonGroupBox.Controls.Add(this.chooseSeasonLabel);
             this.seasonGroupBox.Controls.Add(this.goButton);
             this.seasonGroupBox.Controls.Add(this.seasonComboBox);
@@ -251,6 +253,7 @@
             // 
             // enumerationGroupBox
             // 
+            this.enumerationGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.enumerationGroupBox.Controls.Add(this.chooseValueLabel);
             this.enumerationGroupBox.Controls.Add(this.valuesListBox);
             this.enumerationGroupBox.Controls.Add(this.intValueLabel);
@@ -355,6 +358,7 @@
             this.rectanglesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.rectanglesGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.rectanglesGroupBox.Controls.Add(this.idLabel);
             this.rectanglesGroupBox.Controls.Add(this.yLabel);
             this.rectanglesGroupBox.Controls.Add(this.xLabel);
@@ -405,7 +409,7 @@
             this.idTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idTextBox.Location = new System.Drawing.Point(148, 270);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(92, 20);
+            this.idTextBox.Size = new System.Drawing.Size(105, 20);
             this.idTextBox.TabIndex = 11;
             this.idTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdTextBox_KeyPress);
             // 
@@ -414,7 +418,7 @@
             this.yTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.yTextBox.Location = new System.Drawing.Point(148, 225);
             this.yTextBox.Name = "yTextBox";
-            this.yTextBox.Size = new System.Drawing.Size(92, 20);
+            this.yTextBox.Size = new System.Drawing.Size(105, 20);
             this.yTextBox.TabIndex = 10;
             this.yTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.YTextBox_KeyPress);
             // 
@@ -423,7 +427,7 @@
             this.xTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.xTextBox.Location = new System.Drawing.Point(148, 179);
             this.xTextBox.Name = "xTextBox";
-            this.xTextBox.Size = new System.Drawing.Size(92, 20);
+            this.xTextBox.Size = new System.Drawing.Size(105, 20);
             this.xTextBox.TabIndex = 9;
             this.xTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.XTextBox_KeyPress);
             // 
@@ -434,7 +438,7 @@
             this.rectanglesListBox.FormattingEnabled = true;
             this.rectanglesListBox.Location = new System.Drawing.Point(15, 19);
             this.rectanglesListBox.Name = "rectanglesListBox";
-            this.rectanglesListBox.Size = new System.Drawing.Size(112, 368);
+            this.rectanglesListBox.Size = new System.Drawing.Size(112, 394);
             this.rectanglesListBox.TabIndex = 8;
             this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
@@ -470,7 +474,7 @@
             this.colorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorTextBox.Location = new System.Drawing.Point(148, 134);
             this.colorTextBox.Name = "colorTextBox";
-            this.colorTextBox.Size = new System.Drawing.Size(92, 20);
+            this.colorTextBox.Size = new System.Drawing.Size(105, 20);
             this.colorTextBox.TabIndex = 4;
             this.colorTextBox.TextChanged += new System.EventHandler(this.ColorTextBox_TextChanged);
             // 
@@ -479,7 +483,7 @@
             this.widthTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.widthTextBox.Location = new System.Drawing.Point(148, 88);
             this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(92, 20);
+            this.widthTextBox.Size = new System.Drawing.Size(105, 20);
             this.widthTextBox.TabIndex = 3;
             this.widthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
             // 
@@ -488,7 +492,7 @@
             this.lengthTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lengthTextBox.Location = new System.Drawing.Point(148, 42);
             this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(92, 20);
+            this.lengthTextBox.Size = new System.Drawing.Size(105, 20);
             this.lengthTextBox.TabIndex = 2;
             this.lengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged);
             // 
@@ -496,9 +500,9 @@
             // 
             this.findRectangleButton.BackColor = System.Drawing.Color.Silver;
             this.findRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.findRectangleButton.Location = new System.Drawing.Point(148, 314);
+            this.findRectangleButton.Location = new System.Drawing.Point(148, 379);
             this.findRectangleButton.Name = "findRectangleButton";
-            this.findRectangleButton.Size = new System.Drawing.Size(55, 19);
+            this.findRectangleButton.Size = new System.Drawing.Size(105, 33);
             this.findRectangleButton.TabIndex = 1;
             this.findRectangleButton.Text = "Find";
             this.findRectangleButton.UseVisualStyleBackColor = false;
@@ -509,6 +513,7 @@
             this.moviesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.moviesGroupBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.moviesGroupBox.Controls.Add(this.moviesListBox);
             this.moviesGroupBox.Controls.Add(this.ratingLabel);
             this.moviesGroupBox.Controls.Add(this.genreLabel);
@@ -535,7 +540,7 @@
             this.moviesListBox.FormattingEnabled = true;
             this.moviesListBox.Location = new System.Drawing.Point(14, 19);
             this.moviesListBox.Name = "moviesListBox";
-            this.moviesListBox.Size = new System.Drawing.Size(112, 368);
+            this.moviesListBox.Size = new System.Drawing.Size(112, 394);
             this.moviesListBox.TabIndex = 9;
             this.moviesListBox.SelectedIndexChanged += new System.EventHandler(this.MoviesListBox_SelectedIndexChanged);
             // 
@@ -588,9 +593,9 @@
             // 
             this.findMovieButton.BackColor = System.Drawing.Color.Silver;
             this.findMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.findMovieButton.Location = new System.Drawing.Point(137, 270);
+            this.findMovieButton.Location = new System.Drawing.Point(137, 379);
             this.findMovieButton.Name = "findMovieButton";
-            this.findMovieButton.Size = new System.Drawing.Size(55, 19);
+            this.findMovieButton.Size = new System.Drawing.Size(105, 33);
             this.findMovieButton.TabIndex = 8;
             this.findMovieButton.Text = "Find";
             this.findMovieButton.UseVisualStyleBackColor = false;
@@ -601,7 +606,7 @@
             this.ratingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ratingTextBox.Location = new System.Drawing.Point(137, 226);
             this.ratingTextBox.Name = "ratingTextBox";
-            this.ratingTextBox.Size = new System.Drawing.Size(92, 20);
+            this.ratingTextBox.Size = new System.Drawing.Size(105, 20);
             this.ratingTextBox.TabIndex = 12;
             this.ratingTextBox.TextChanged += new System.EventHandler(this.RatingTextBox_TextChanged);
             // 
@@ -610,7 +615,7 @@
             this.genreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.genreTextBox.Location = new System.Drawing.Point(137, 180);
             this.genreTextBox.Name = "genreTextBox";
-            this.genreTextBox.Size = new System.Drawing.Size(92, 20);
+            this.genreTextBox.Size = new System.Drawing.Size(105, 20);
             this.genreTextBox.TabIndex = 11;
             this.genreTextBox.TextChanged += new System.EventHandler(this.GenreTextBox_TextChanged);
             // 
@@ -619,7 +624,7 @@
             this.yearTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.yearTextBox.Location = new System.Drawing.Point(137, 134);
             this.yearTextBox.Name = "yearTextBox";
-            this.yearTextBox.Size = new System.Drawing.Size(92, 20);
+            this.yearTextBox.Size = new System.Drawing.Size(105, 20);
             this.yearTextBox.TabIndex = 10;
             this.yearTextBox.TextChanged += new System.EventHandler(this.YearTextBox_TextChanged);
             // 
@@ -628,7 +633,7 @@
             this.timeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timeTextBox.Location = new System.Drawing.Point(137, 88);
             this.timeTextBox.Name = "timeTextBox";
-            this.timeTextBox.Size = new System.Drawing.Size(92, 20);
+            this.timeTextBox.Size = new System.Drawing.Size(105, 20);
             this.timeTextBox.TabIndex = 9;
             this.timeTextBox.TextChanged += new System.EventHandler(this.TimeTextBox_TextChanged);
             // 
@@ -637,7 +642,7 @@
             this.titleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.titleTextBox.Location = new System.Drawing.Point(137, 42);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(92, 20);
+            this.titleTextBox.Size = new System.Drawing.Size(105, 20);
             this.titleTextBox.TabIndex = 8;
             this.titleTextBox.TextChanged += new System.EventHandler(this.TitleTextBox_TextChanged);
             // 
