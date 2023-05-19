@@ -1,4 +1,16 @@
-﻿namespace Programming.Model.Enums
+﻿public enum Weekday
+{
+    Monday = 1,
+    Tuesday = 2,
+    Wednesday = 3,
+    Thursday = 4,
+    Friday = 5,
+    Saturday = 6,
+    Sunday = 7
+}
+
+/*
+namespace Programming.Model.Enums
 {
     public enum Weekday
     {
@@ -7,7 +19,8 @@
         Wednesday = 3,
         Thursday = 4,
         Friday = 5,
-        Saturday = 6, 
+        Saturday = 6,
         Sunday = 7
-    }   
+    }
 }
+*/

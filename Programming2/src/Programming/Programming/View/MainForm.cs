@@ -76,7 +76,9 @@ namespace Programming.View
 
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            intValueTextBox.Text = valuesListBox.SelectedIndex.ToString();
+            var number = ((int)Enum.Parse(Type.GetType(enumsListBox.Text), valuesListBox.Text)).ToString();
+            intValueTextBox.Text = number.ToString();
+
         }
 
         private void ParseButton_Click(object sender, EventArgs e)
@@ -88,12 +90,11 @@ namespace Programming.View
                 var stringValue = enumValue.ToString();
                 if (weekdayTextBox.Text == stringValue)
                 {
-                    var day = (int)Enum.Parse(typeof(Weekday), stringValue); 
                     flag = !flag;
-                    resultParsingLabel.Text = $"Это день недели ({stringValue} = {day})";
+                    resultParsingLabel.Text = $"Это день недели ({stringValue} = " +
+                                         $"{(int)Enum.Parse(typeof(Weekday), stringValue)})";
                 }
             }
-
             if (!flag)
                 resultParsingLabel.Text = "Нет такого дня недели";
         }
