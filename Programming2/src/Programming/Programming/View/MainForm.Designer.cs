@@ -664,6 +664,7 @@
             // 
             // ractanglesTabPage
             // 
+            this.ractanglesTabPage.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ractanglesTabPage.Controls.Add(this.rectanglesPanel);
             this.ractanglesTabPage.Controls.Add(this.label6);
             this.ractanglesTabPage.Controls.Add(this.label5);
@@ -686,14 +687,13 @@
             this.ractanglesTabPage.Size = new System.Drawing.Size(788, 432);
             this.ractanglesTabPage.TabIndex = 2;
             this.ractanglesTabPage.Text = "Rectangles";
-            this.ractanglesTabPage.UseVisualStyleBackColor = true;
             // 
             // rectanglesPanel
             // 
             this.rectanglesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rectanglesPanel.Location = new System.Drawing.Point(399, 6);
+            this.rectanglesPanel.Location = new System.Drawing.Point(375, 6);
             this.rectanglesPanel.Name = "rectanglesPanel";
-            this.rectanglesPanel.Size = new System.Drawing.Size(381, 426);
+            this.rectanglesPanel.Size = new System.Drawing.Size(405, 426);
             this.rectanglesPanel.TabIndex = 15;
             // 
             // label6
@@ -792,22 +792,30 @@
             // 
             // deleteRectangleButton
             // 
-            this.deleteRectangleButton.Location = new System.Drawing.Point(231, 169);
+            this.deleteRectangleButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.deleteRectangleButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteRectangleButton.BackgroundImage")));
+            this.deleteRectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.deleteRectangleButton.FlatAppearance.BorderSize = 0;
+            this.deleteRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteRectangleButton.Location = new System.Drawing.Point(225, 156);
             this.deleteRectangleButton.Name = "deleteRectangleButton";
-            this.deleteRectangleButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteRectangleButton.Size = new System.Drawing.Size(91, 66);
             this.deleteRectangleButton.TabIndex = 3;
-            this.deleteRectangleButton.Text = "button2";
-            this.deleteRectangleButton.UseVisualStyleBackColor = true;
+            this.deleteRectangleButton.UseVisualStyleBackColor = false;
             this.deleteRectangleButton.Click += new System.EventHandler(this.DeleteRectangleButton_Click);
             // 
             // addRectangleButton
             // 
-            this.addRectangleButton.Location = new System.Drawing.Point(41, 169);
+            this.addRectangleButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.addRectangleButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addRectangleButton.BackgroundImage")));
+            this.addRectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addRectangleButton.FlatAppearance.BorderSize = 0;
+            this.addRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addRectangleButton.Location = new System.Drawing.Point(41, 156);
             this.addRectangleButton.Name = "addRectangleButton";
-            this.addRectangleButton.Size = new System.Drawing.Size(75, 23);
+            this.addRectangleButton.Size = new System.Drawing.Size(75, 66);
             this.addRectangleButton.TabIndex = 2;
-            this.addRectangleButton.Text = "button1";
-            this.addRectangleButton.UseVisualStyleBackColor = true;
+            this.addRectangleButton.UseVisualStyleBackColor = false;
             this.addRectangleButton.Click += new System.EventHandler(this.AddRectangleButton_Click);
             // 
             // rectanglesLabel

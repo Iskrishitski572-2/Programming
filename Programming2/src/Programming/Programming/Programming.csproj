@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\icon_48x48.ico" />
+    <Content Include="Icons\icon_delete.png" />
+    <Content Include="Icons\icon_plus.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
