@@ -1,4 +1,4 @@
-﻿namespace Programming.Model.Classes
+﻿namespace Programming.Model
 {
     public static class Validator
     {
@@ -25,7 +25,7 @@
                 throw new System.ArgumentException($"{name} должно быть от {min} до {max}");
             }
         }
-        
+
         public static void AssertValueInRange(double value, string name, int min, int max)
         {
             if (value < min || value > max)

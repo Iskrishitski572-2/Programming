@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Programming.Model.Geometry;
+using System;
 
 namespace Programming.Model.Classes
 {

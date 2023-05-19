@@ -51,8 +51,6 @@
     <Compile Include="Model\Classes\Discipline.cs" />
     <Compile Include="Model\Classes\Flight.cs" />
     <Compile Include="Model\Classes\Movie.cs" />
-    <Compile Include="Model\Classes\Point2D.cs" />
-    <Compile Include="Model\Classes\Rectangle.cs" />
     <Compile Include="Model\Classes\Ring.cs" />
     <Compile Include="Model\Classes\Song.cs" />
     <Compile Include="Model\Classes\Time.cs" />
@@ -63,6 +61,10 @@
     <Compile Include="Model\Enums\Manufactures.cs" />
     <Compile Include="Model\Enums\Season.cs" />
     <Compile Include="Model\Enums\Weekday.cs" />
+    <Compile Include="Model\Geometry\Point2D.cs" />
+    <Compile Include="Model\Geometry\Rectangle.cs" />
+    <Compile Include="Model\Geometry\RectangleFactory.cs" />
+    <Compile Include="Model\Geometry\Ring.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\MainForm.cs">
