@@ -98,6 +98,7 @@
             this.rectanglesLengthTextBox = new System.Windows.Forms.TextBox();
             this.rectanglesYTextBox = new System.Windows.Forms.TextBox();
             this.rectanglesWidthTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesGroupBoxPrint = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.enumsTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -112,6 +113,7 @@
             this.ractanglesTabPage.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.rectanglesGroupBox2.SuspendLayout();
+            this.rectanglesGroupBoxPrint.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -566,7 +568,7 @@
             // 
             // ratingLabel
             // 
-            this.ratingLabel.Location = new System.Drawing.Point(138, 203);
+            this.ratingLabel.Location = new System.Drawing.Point(147, 203);
             this.ratingLabel.Name = "ratingLabel";
             this.ratingLabel.Size = new System.Drawing.Size(58, 20);
             this.ratingLabel.TabIndex = 16;
@@ -575,7 +577,7 @@
             // 
             // genreLabel
             // 
-            this.genreLabel.Location = new System.Drawing.Point(138, 157);
+            this.genreLabel.Location = new System.Drawing.Point(147, 157);
             this.genreLabel.Name = "genreLabel";
             this.genreLabel.Size = new System.Drawing.Size(58, 20);
             this.genreLabel.TabIndex = 15;
@@ -584,7 +586,7 @@
             // 
             // yearLabel
             // 
-            this.yearLabel.Location = new System.Drawing.Point(137, 111);
+            this.yearLabel.Location = new System.Drawing.Point(146, 111);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(58, 20);
             this.yearLabel.TabIndex = 14;
@@ -593,7 +595,7 @@
             // 
             // timeLabel
             // 
-            this.timeLabel.Location = new System.Drawing.Point(138, 65);
+            this.timeLabel.Location = new System.Drawing.Point(147, 65);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(58, 20);
             this.timeLabel.TabIndex = 13;
@@ -602,7 +604,7 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Location = new System.Drawing.Point(138, 19);
+            this.titleLabel.Location = new System.Drawing.Point(147, 19);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(59, 20);
             this.titleLabel.TabIndex = 8;
@@ -613,7 +615,7 @@
             // 
             this.findMovieButton.BackColor = System.Drawing.Color.Silver;
             this.findMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.findMovieButton.Location = new System.Drawing.Point(137, 379);
+            this.findMovieButton.Location = new System.Drawing.Point(146, 379);
             this.findMovieButton.Name = "findMovieButton";
             this.findMovieButton.Size = new System.Drawing.Size(105, 33);
             this.findMovieButton.TabIndex = 8;
@@ -624,7 +626,7 @@
             // ratingTextBox
             // 
             this.ratingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ratingTextBox.Location = new System.Drawing.Point(137, 226);
+            this.ratingTextBox.Location = new System.Drawing.Point(146, 226);
             this.ratingTextBox.Name = "ratingTextBox";
             this.ratingTextBox.Size = new System.Drawing.Size(105, 20);
             this.ratingTextBox.TabIndex = 12;
@@ -633,7 +635,7 @@
             // genreTextBox
             // 
             this.genreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.genreTextBox.Location = new System.Drawing.Point(137, 180);
+            this.genreTextBox.Location = new System.Drawing.Point(146, 180);
             this.genreTextBox.Name = "genreTextBox";
             this.genreTextBox.Size = new System.Drawing.Size(105, 20);
             this.genreTextBox.TabIndex = 11;
@@ -642,7 +644,7 @@
             // yearTextBox
             // 
             this.yearTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.yearTextBox.Location = new System.Drawing.Point(137, 134);
+            this.yearTextBox.Location = new System.Drawing.Point(146, 134);
             this.yearTextBox.Name = "yearTextBox";
             this.yearTextBox.Size = new System.Drawing.Size(105, 20);
             this.yearTextBox.TabIndex = 10;
@@ -651,7 +653,7 @@
             // timeTextBox
             // 
             this.timeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeTextBox.Location = new System.Drawing.Point(137, 88);
+            this.timeTextBox.Location = new System.Drawing.Point(146, 88);
             this.timeTextBox.Name = "timeTextBox";
             this.timeTextBox.Size = new System.Drawing.Size(105, 20);
             this.timeTextBox.TabIndex = 9;
@@ -660,7 +662,7 @@
             // titleTextBox
             // 
             this.titleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.titleTextBox.Location = new System.Drawing.Point(137, 42);
+            this.titleTextBox.Location = new System.Drawing.Point(146, 42);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(105, 20);
             this.titleTextBox.TabIndex = 8;
@@ -682,7 +684,7 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.rectanglesPanel, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.rectanglesGroupBoxPrint, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.rectanglesGroupBox2, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
@@ -694,11 +696,10 @@
             // 
             // rectanglesPanel
             // 
-            this.rectanglesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rectanglesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rectanglesPanel.Location = new System.Drawing.Point(394, 3);
+            this.rectanglesPanel.Location = new System.Drawing.Point(3, 16);
             this.rectanglesPanel.Name = "rectanglesPanel";
-            this.rectanglesPanel.Size = new System.Drawing.Size(385, 420);
+            this.rectanglesPanel.Size = new System.Drawing.Size(379, 401);
             this.rectanglesPanel.TabIndex = 15;
             // 
             // rectanglesGroupBox2
@@ -859,6 +860,16 @@
             this.rectanglesWidthTextBox.TabIndex = 8;
             this.rectanglesWidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged2);
             // 
+            // rectanglesGroupBoxPrint
+            // 
+            this.rectanglesGroupBoxPrint.Controls.Add(this.rectanglesPanel);
+            this.rectanglesGroupBoxPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rectanglesGroupBoxPrint.Location = new System.Drawing.Point(394, 3);
+            this.rectanglesGroupBoxPrint.Name = "rectanglesGroupBoxPrint";
+            this.rectanglesGroupBoxPrint.Size = new System.Drawing.Size(385, 420);
+            this.rectanglesGroupBoxPrint.TabIndex = 0;
+            this.rectanglesGroupBoxPrint.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -891,6 +902,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.rectanglesGroupBox2.ResumeLayout(false);
             this.rectanglesGroupBox2.PerformLayout();
+            this.rectanglesGroupBoxPrint.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -992,5 +1004,6 @@
         private System.Windows.Forms.ListBox rectanglesListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.GroupBox rectanglesGroupBox2;
+        private System.Windows.Forms.GroupBox rectanglesGroupBoxPrint;
     }
 }
