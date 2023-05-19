@@ -81,22 +81,23 @@
             this.timeTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.ractanglesTabPage = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.rectanglesPanel = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rectanglesLengthTextBox = new System.Windows.Forms.TextBox();
-            this.rectanglesWidthTextBox = new System.Windows.Forms.TextBox();
-            this.rectanglesYTextBox = new System.Windows.Forms.TextBox();
-            this.rectanglesXTextBox = new System.Windows.Forms.TextBox();
-            this.rectanglesIdTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.deleteRectangleButton = new System.Windows.Forms.Button();
-            this.addRectangleButton = new System.Windows.Forms.Button();
-            this.rectanglesLabel = new System.Windows.Forms.Label();
+            this.rectanglesGroupBox2 = new System.Windows.Forms.GroupBox();
             this.rectanglesListBox = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.addRectangleButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.deleteRectangleButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rectanglesIdTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rectanglesXTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesLengthTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesYTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesWidthTextBox = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.enumsTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -109,6 +110,8 @@
             this.rectanglesGroupBox.SuspendLayout();
             this.moviesGroupBox.SuspendLayout();
             this.ractanglesTabPage.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.rectanglesGroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -139,6 +142,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
@@ -347,7 +351,7 @@
             // 
             // classesTabPage
             // 
-            this.classesTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.classesTabPage.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.classesTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.classesTabPage.Controls.Add(this.tableLayoutPanel3);
             this.classesTabPage.Location = new System.Drawing.Point(4, 22);
@@ -665,22 +669,7 @@
             // ractanglesTabPage
             // 
             this.ractanglesTabPage.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ractanglesTabPage.Controls.Add(this.rectanglesPanel);
-            this.ractanglesTabPage.Controls.Add(this.label6);
-            this.ractanglesTabPage.Controls.Add(this.label5);
-            this.ractanglesTabPage.Controls.Add(this.label4);
-            this.ractanglesTabPage.Controls.Add(this.label3);
-            this.ractanglesTabPage.Controls.Add(this.label2);
-            this.ractanglesTabPage.Controls.Add(this.rectanglesLengthTextBox);
-            this.ractanglesTabPage.Controls.Add(this.rectanglesWidthTextBox);
-            this.ractanglesTabPage.Controls.Add(this.rectanglesYTextBox);
-            this.ractanglesTabPage.Controls.Add(this.rectanglesXTextBox);
-            this.ractanglesTabPage.Controls.Add(this.rectanglesIdTextBox);
-            this.ractanglesTabPage.Controls.Add(this.label1);
-            this.ractanglesTabPage.Controls.Add(this.deleteRectangleButton);
-            this.ractanglesTabPage.Controls.Add(this.addRectangleButton);
-            this.ractanglesTabPage.Controls.Add(this.rectanglesLabel);
-            this.ractanglesTabPage.Controls.Add(this.rectanglesListBox);
+            this.ractanglesTabPage.Controls.Add(this.tableLayoutPanel4);
             this.ractanglesTabPage.Location = new System.Drawing.Point(4, 22);
             this.ractanglesTabPage.Name = "ractanglesTabPage";
             this.ractanglesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -688,121 +677,73 @@
             this.ractanglesTabPage.TabIndex = 2;
             this.ractanglesTabPage.Text = "Rectangles";
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.rectanglesPanel, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.rectanglesGroupBox2, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(782, 426);
+            this.tableLayoutPanel4.TabIndex = 16;
+            // 
             // rectanglesPanel
             // 
             this.rectanglesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rectanglesPanel.Location = new System.Drawing.Point(375, 6);
+            this.rectanglesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rectanglesPanel.Location = new System.Drawing.Point(394, 3);
             this.rectanglesPanel.Name = "rectanglesPanel";
-            this.rectanglesPanel.Size = new System.Drawing.Size(405, 426);
+            this.rectanglesPanel.Size = new System.Drawing.Size(385, 420);
             this.rectanglesPanel.TabIndex = 15;
+            // 
+            // rectanglesGroupBox2
+            // 
+            this.rectanglesGroupBox2.Controls.Add(this.rectanglesListBox);
+            this.rectanglesGroupBox2.Controls.Add(this.label6);
+            this.rectanglesGroupBox2.Controls.Add(this.addRectangleButton);
+            this.rectanglesGroupBox2.Controls.Add(this.label5);
+            this.rectanglesGroupBox2.Controls.Add(this.deleteRectangleButton);
+            this.rectanglesGroupBox2.Controls.Add(this.label4);
+            this.rectanglesGroupBox2.Controls.Add(this.label1);
+            this.rectanglesGroupBox2.Controls.Add(this.label3);
+            this.rectanglesGroupBox2.Controls.Add(this.rectanglesIdTextBox);
+            this.rectanglesGroupBox2.Controls.Add(this.label2);
+            this.rectanglesGroupBox2.Controls.Add(this.rectanglesXTextBox);
+            this.rectanglesGroupBox2.Controls.Add(this.rectanglesLengthTextBox);
+            this.rectanglesGroupBox2.Controls.Add(this.rectanglesYTextBox);
+            this.rectanglesGroupBox2.Controls.Add(this.rectanglesWidthTextBox);
+            this.rectanglesGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rectanglesGroupBox2.Location = new System.Drawing.Point(3, 3);
+            this.rectanglesGroupBox2.Name = "rectanglesGroupBox2";
+            this.rectanglesGroupBox2.Size = new System.Drawing.Size(385, 420);
+            this.rectanglesGroupBox2.TabIndex = 0;
+            this.rectanglesGroupBox2.TabStop = false;
+            this.rectanglesGroupBox2.Text = "Rectangles:";
+            // 
+            // rectanglesListBox
+            // 
+            this.rectanglesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rectanglesListBox.FormattingEnabled = true;
+            this.rectanglesListBox.Location = new System.Drawing.Point(6, 19);
+            this.rectanglesListBox.Name = "rectanglesListBox";
+            this.rectanglesListBox.Size = new System.Drawing.Size(373, 95);
+            this.rectanglesListBox.TabIndex = 0;
+            this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 383);
+            this.label6.Location = new System.Drawing.Point(13, 337);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Length:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 357);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Width:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 331);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Y:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 305);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "X:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 279);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "ID:";
-            // 
-            // rectanglesLengthTextBox
-            // 
-            this.rectanglesLengthTextBox.Location = new System.Drawing.Point(71, 376);
-            this.rectanglesLengthTextBox.Name = "rectanglesLengthTextBox";
-            this.rectanglesLengthTextBox.Size = new System.Drawing.Size(100, 20);
-            this.rectanglesLengthTextBox.TabIndex = 9;
-            this.rectanglesLengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged2);
-            // 
-            // rectanglesWidthTextBox
-            // 
-            this.rectanglesWidthTextBox.Location = new System.Drawing.Point(71, 350);
-            this.rectanglesWidthTextBox.Name = "rectanglesWidthTextBox";
-            this.rectanglesWidthTextBox.Size = new System.Drawing.Size(100, 20);
-            this.rectanglesWidthTextBox.TabIndex = 8;
-            this.rectanglesWidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged2);
-            // 
-            // rectanglesYTextBox
-            // 
-            this.rectanglesYTextBox.Location = new System.Drawing.Point(71, 324);
-            this.rectanglesYTextBox.Name = "rectanglesYTextBox";
-            this.rectanglesYTextBox.Size = new System.Drawing.Size(100, 20);
-            this.rectanglesYTextBox.TabIndex = 7;
-            this.rectanglesYTextBox.TextChanged += new System.EventHandler(this.YTextBox_TextChanged);
-            // 
-            // rectanglesXTextBox
-            // 
-            this.rectanglesXTextBox.Location = new System.Drawing.Point(71, 298);
-            this.rectanglesXTextBox.Name = "rectanglesXTextBox";
-            this.rectanglesXTextBox.Size = new System.Drawing.Size(100, 20);
-            this.rectanglesXTextBox.TabIndex = 6;
-            this.rectanglesXTextBox.TextChanged += new System.EventHandler(this.XTextBox_TextChanged);
-            // 
-            // rectanglesIdTextBox
-            // 
-            this.rectanglesIdTextBox.Location = new System.Drawing.Point(71, 272);
-            this.rectanglesIdTextBox.Name = "rectanglesIdTextBox";
-            this.rectanglesIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.rectanglesIdTextBox.TabIndex = 5;
-            this.rectanglesIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdTextBox_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 238);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Selected Rectangle:";
-            // 
-            // deleteRectangleButton
-            // 
-            this.deleteRectangleButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.deleteRectangleButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteRectangleButton.BackgroundImage")));
-            this.deleteRectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.deleteRectangleButton.FlatAppearance.BorderSize = 0;
-            this.deleteRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteRectangleButton.Location = new System.Drawing.Point(225, 156);
-            this.deleteRectangleButton.Name = "deleteRectangleButton";
-            this.deleteRectangleButton.Size = new System.Drawing.Size(91, 66);
-            this.deleteRectangleButton.TabIndex = 3;
-            this.deleteRectangleButton.UseVisualStyleBackColor = false;
-            this.deleteRectangleButton.Click += new System.EventHandler(this.DeleteRectangleButton_Click);
             // 
             // addRectangleButton
             // 
@@ -811,30 +752,112 @@
             this.addRectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.addRectangleButton.FlatAppearance.BorderSize = 0;
             this.addRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addRectangleButton.Location = new System.Drawing.Point(41, 156);
+            this.addRectangleButton.Location = new System.Drawing.Point(6, 120);
             this.addRectangleButton.Name = "addRectangleButton";
-            this.addRectangleButton.Size = new System.Drawing.Size(75, 66);
+            this.addRectangleButton.Size = new System.Drawing.Size(62, 41);
             this.addRectangleButton.TabIndex = 2;
             this.addRectangleButton.UseVisualStyleBackColor = false;
             this.addRectangleButton.Click += new System.EventHandler(this.AddRectangleButton_Click);
             // 
-            // rectanglesLabel
+            // label5
             // 
-            this.rectanglesLabel.AutoSize = true;
-            this.rectanglesLabel.Location = new System.Drawing.Point(9, 23);
-            this.rectanglesLabel.Name = "rectanglesLabel";
-            this.rectanglesLabel.Size = new System.Drawing.Size(64, 13);
-            this.rectanglesLabel.TabIndex = 1;
-            this.rectanglesLabel.Text = "Rectangles:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 311);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Width:";
             // 
-            // rectanglesListBox
+            // deleteRectangleButton
             // 
-            this.rectanglesListBox.FormattingEnabled = true;
-            this.rectanglesListBox.Location = new System.Drawing.Point(8, 42);
-            this.rectanglesListBox.Name = "rectanglesListBox";
-            this.rectanglesListBox.Size = new System.Drawing.Size(308, 95);
-            this.rectanglesListBox.TabIndex = 0;
-            this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+            this.deleteRectangleButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.deleteRectangleButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteRectangleButton.BackgroundImage")));
+            this.deleteRectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.deleteRectangleButton.FlatAppearance.BorderSize = 0;
+            this.deleteRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteRectangleButton.Location = new System.Drawing.Point(317, 120);
+            this.deleteRectangleButton.Name = "deleteRectangleButton";
+            this.deleteRectangleButton.Size = new System.Drawing.Size(62, 41);
+            this.deleteRectangleButton.TabIndex = 3;
+            this.deleteRectangleButton.UseVisualStyleBackColor = false;
+            this.deleteRectangleButton.Click += new System.EventHandler(this.DeleteRectangleButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 285);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Y:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(9, 196);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Selected Rectangle:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 259);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "X:";
+            // 
+            // rectanglesIdTextBox
+            // 
+            this.rectanglesIdTextBox.Location = new System.Drawing.Point(72, 226);
+            this.rectanglesIdTextBox.Name = "rectanglesIdTextBox";
+            this.rectanglesIdTextBox.Size = new System.Drawing.Size(55, 20);
+            this.rectanglesIdTextBox.TabIndex = 5;
+            this.rectanglesIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdTextBox_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 233);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "ID:";
+            // 
+            // rectanglesXTextBox
+            // 
+            this.rectanglesXTextBox.Location = new System.Drawing.Point(72, 252);
+            this.rectanglesXTextBox.Name = "rectanglesXTextBox";
+            this.rectanglesXTextBox.Size = new System.Drawing.Size(55, 20);
+            this.rectanglesXTextBox.TabIndex = 6;
+            this.rectanglesXTextBox.TextChanged += new System.EventHandler(this.XTextBox_TextChanged);
+            // 
+            // rectanglesLengthTextBox
+            // 
+            this.rectanglesLengthTextBox.Location = new System.Drawing.Point(72, 330);
+            this.rectanglesLengthTextBox.Name = "rectanglesLengthTextBox";
+            this.rectanglesLengthTextBox.Size = new System.Drawing.Size(55, 20);
+            this.rectanglesLengthTextBox.TabIndex = 9;
+            this.rectanglesLengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged2);
+            // 
+            // rectanglesYTextBox
+            // 
+            this.rectanglesYTextBox.Location = new System.Drawing.Point(72, 278);
+            this.rectanglesYTextBox.Name = "rectanglesYTextBox";
+            this.rectanglesYTextBox.Size = new System.Drawing.Size(55, 20);
+            this.rectanglesYTextBox.TabIndex = 7;
+            this.rectanglesYTextBox.TextChanged += new System.EventHandler(this.YTextBox_TextChanged);
+            // 
+            // rectanglesWidthTextBox
+            // 
+            this.rectanglesWidthTextBox.Location = new System.Drawing.Point(72, 304);
+            this.rectanglesWidthTextBox.Name = "rectanglesWidthTextBox";
+            this.rectanglesWidthTextBox.Size = new System.Drawing.Size(55, 20);
+            this.rectanglesWidthTextBox.TabIndex = 8;
+            this.rectanglesWidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged2);
             // 
             // MainForm
             // 
@@ -865,7 +888,9 @@
             this.moviesGroupBox.ResumeLayout(false);
             this.moviesGroupBox.PerformLayout();
             this.ractanglesTabPage.ResumeLayout(false);
-            this.ractanglesTabPage.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.rectanglesGroupBox2.ResumeLayout(false);
+            this.rectanglesGroupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -964,7 +989,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button deleteRectangleButton;
         private System.Windows.Forms.Button addRectangleButton;
-        private System.Windows.Forms.Label rectanglesLabel;
         private System.Windows.Forms.ListBox rectanglesListBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.GroupBox rectanglesGroupBox2;
     }
 }
