@@ -171,6 +171,18 @@ namespace Programming.View
             idTextBox.Text = _currentRectangle.Id.ToString();
         }
 
+        private void ClassRectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentRectangle = _rectangles[classRectanglesListBox.SelectedIndex];
+            lengthTextBox.Text = _rectangles[classRectanglesListBox.SelectedIndex].Length.ToString();
+            widthTextBox.Text = _rectangles[classRectanglesListBox.SelectedIndex].Width.ToString();
+            colorTextBox.Text = _rectangles[classRectanglesListBox.SelectedIndex].Color;
+            xTextBox.Text = _currentRectangle.Center.X.ToString();
+            yTextBox.Text = _currentRectangle.Center.Y.ToString();
+            idTextBox.Text = _currentRectangle.Id.ToString();
+
+        }
+
         private void LengthTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -341,25 +353,25 @@ namespace Programming.View
         {
             rectangle = _rectanglesList[rectanglesListBox.SelectedIndex];
 
-            idTextBox.Text = rectangle.Id.ToString();
-            xTextBox.Text = rectangle.Center.X.ToString();
-            yTextBox.Text = rectangle.Center.Y.ToString();
-            widthTextBox.Text = rectangle.Width.ToString();
-            lengthTextBox.Text = rectangle.Length.ToString();
+            rectanglesIdTextBox.Text = rectangle.Id.ToString();
+            rectanglesXTextBox.Text = rectangle.Center.X.ToString();
+            rectanglesYTextBox.Text = rectangle.Center.Y.ToString();
+            rectanglesWidthTextBox.Text = rectangle.Width.ToString();
+            rectanglesLengthTextBox.Text = rectangle.Length.ToString();
         }
 
         private void ClearRectangleInfo()
         {
-            idTextBox.Text = "";
-            xTextBox.Text = "";
-            yTextBox.Text = "";
-            widthTextBox.Text = "";
-            lengthTextBox.Text = "";
+            rectanglesIdTextBox.Text = "";
+            rectanglesXTextBox.Text = "";
+            rectanglesYTextBox.Text = "";
+            rectanglesWidthTextBox.Text = "";
+            rectanglesLengthTextBox.Text = "";
 
-            xTextBox.BackColor = System.Drawing.Color.White;
-            yTextBox.BackColor = System.Drawing.Color.White;
-            widthTextBox.BackColor = System.Drawing.Color.White;
-            lengthTextBox.BackColor = System.Drawing.Color.White;
+            rectanglesXTextBox.BackColor = System.Drawing.Color.White;
+            rectanglesYTextBox.BackColor = System.Drawing.Color.White;
+            rectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
+            rectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
         }
 
         private void AddRectangleButton_Click(object sender, EventArgs e)
@@ -421,9 +433,9 @@ namespace Programming.View
         {
             try
             {
-                xTextBox.BackColor = System.Drawing.Color.White;
+                rectanglesXTextBox.BackColor = System.Drawing.Color.White;
 
-                var x = Convert.ToDouble(xTextBox.Text);
+                var x = Convert.ToDouble(rectanglesXTextBox.Text);
                 var y = _currentRectangleList.Center.Y;
                 var coordinatePoint2D = new Point2D(x, y);
                 var coordinatePoint = new Point(Convert.ToInt32(x), Convert.ToInt32(y));
@@ -436,7 +448,7 @@ namespace Programming.View
             }
             catch
             {
-                xTextBox.BackColor = System.Drawing.Color.LightPink;
+                rectanglesXTextBox.BackColor = System.Drawing.Color.LightPink;
             }
         }
 
@@ -444,10 +456,10 @@ namespace Programming.View
         {
             try
             {
-                yTextBox.BackColor = System.Drawing.Color.White;
+                rectanglesYTextBox.BackColor = System.Drawing.Color.White;
 
                 var x = _currentRectangleList.Center.X;
-                var y = Convert.ToDouble(yTextBox.Text);
+                var y = Convert.ToDouble(rectanglesYTextBox.Text);
                 var coordinatePoint2D = new Point2D(x, y);
                 var coordinatePoint = new Point(Convert.ToInt32(x), Convert.ToInt32(y));
                 var info = TakeInfoFromRectangle(_currentRectangleList);
@@ -459,7 +471,7 @@ namespace Programming.View
             }
             catch
             {
-                yTextBox.BackColor = System.Drawing.Color.LightPink;
+                rectanglesYTextBox.BackColor = System.Drawing.Color.LightPink;
             }
         }
 
@@ -467,9 +479,9 @@ namespace Programming.View
         {
             try
             {
-                widthTextBox.BackColor = System.Drawing.Color.White;
-                var widthDouble = Convert.ToDouble(widthTextBox.Text);
-                var widthInt = Convert.ToInt32(widthTextBox.Text);
+                rectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
+                var widthDouble = Convert.ToDouble(rectanglesWidthTextBox.Text);
+                var widthInt = Convert.ToInt32(rectanglesWidthTextBox.Text);
                 var info = TakeInfoFromRectangle(_currentRectangleList);
 
                 _currentRectangleList.Width = widthDouble;
@@ -479,7 +491,7 @@ namespace Programming.View
             }
             catch
             {
-                widthTextBox.BackColor = System.Drawing.Color.LightPink;
+                rectanglesWidthTextBox.BackColor = System.Drawing.Color.LightPink;
             }
         }
 
@@ -487,9 +499,9 @@ namespace Programming.View
         {
             try
             {
-                lengthTextBox.BackColor = System.Drawing.Color.White;
-                var lengthDouble = Convert.ToDouble(lengthTextBox.Text);
-                var lengthInt = Convert.ToInt32(lengthTextBox.Text);
+                rectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
+                var lengthDouble = Convert.ToDouble(rectanglesLengthTextBox.Text);
+                var lengthInt = Convert.ToInt32(rectanglesLengthTextBox.Text);
                 var info = TakeInfoFromRectangle(_currentRectangleList);
 
                 _currentRectangleList.Length = lengthDouble;
@@ -499,7 +511,7 @@ namespace Programming.View
             }
             catch
             {
-                lengthTextBox.BackColor = System.Drawing.Color.LightPink;
+                rectanglesLengthTextBox.BackColor = System.Drawing.Color.LightPink;
             }
         }
 

@@ -87,11 +87,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rectanglesLengthTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesWidthTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesYTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesXTextBox = new System.Windows.Forms.TextBox();
+            this.rectanglesIdTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.deleteRectangleButton = new System.Windows.Forms.Button();
             this.addRectangleButton = new System.Windows.Forms.Button();
@@ -456,7 +456,7 @@
             this.classRectanglesListBox.Name = "classRectanglesListBox";
             this.classRectanglesListBox.Size = new System.Drawing.Size(112, 394);
             this.classRectanglesListBox.TabIndex = 8;
-            this.classRectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
+            this.classRectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.ClassRectanglesListBox_SelectedIndexChanged);
             // 
             // lengthLabel
             // 
@@ -670,11 +670,11 @@
             this.ractanglesTabPage.Controls.Add(this.label4);
             this.ractanglesTabPage.Controls.Add(this.label3);
             this.ractanglesTabPage.Controls.Add(this.label2);
-            this.ractanglesTabPage.Controls.Add(this.textBox5);
-            this.ractanglesTabPage.Controls.Add(this.textBox4);
-            this.ractanglesTabPage.Controls.Add(this.textBox3);
-            this.ractanglesTabPage.Controls.Add(this.textBox2);
-            this.ractanglesTabPage.Controls.Add(this.textBox1);
+            this.ractanglesTabPage.Controls.Add(this.rectanglesLengthTextBox);
+            this.ractanglesTabPage.Controls.Add(this.rectanglesWidthTextBox);
+            this.ractanglesTabPage.Controls.Add(this.rectanglesYTextBox);
+            this.ractanglesTabPage.Controls.Add(this.rectanglesXTextBox);
+            this.ractanglesTabPage.Controls.Add(this.rectanglesIdTextBox);
             this.ractanglesTabPage.Controls.Add(this.label1);
             this.ractanglesTabPage.Controls.Add(this.deleteRectangleButton);
             this.ractanglesTabPage.Controls.Add(this.addRectangleButton);
@@ -741,45 +741,45 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "ID:";
             // 
-            // textBox5
+            // rectanglesLengthTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(71, 376);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged2);
+            this.rectanglesLengthTextBox.Location = new System.Drawing.Point(71, 376);
+            this.rectanglesLengthTextBox.Name = "rectanglesLengthTextBox";
+            this.rectanglesLengthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rectanglesLengthTextBox.TabIndex = 9;
+            this.rectanglesLengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged2);
             // 
-            // textBox4
+            // rectanglesWidthTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 350);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged2);
+            this.rectanglesWidthTextBox.Location = new System.Drawing.Point(71, 350);
+            this.rectanglesWidthTextBox.Name = "rectanglesWidthTextBox";
+            this.rectanglesWidthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rectanglesWidthTextBox.TabIndex = 8;
+            this.rectanglesWidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged2);
             // 
-            // textBox3
+            // rectanglesYTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(71, 324);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new System.EventHandler(this.YTextBox_TextChanged);
+            this.rectanglesYTextBox.Location = new System.Drawing.Point(71, 324);
+            this.rectanglesYTextBox.Name = "rectanglesYTextBox";
+            this.rectanglesYTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rectanglesYTextBox.TabIndex = 7;
+            this.rectanglesYTextBox.TextChanged += new System.EventHandler(this.YTextBox_TextChanged);
             // 
-            // textBox2
+            // rectanglesXTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(71, 298);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.TextChanged += new System.EventHandler(this.XTextBox_TextChanged);
+            this.rectanglesXTextBox.Location = new System.Drawing.Point(71, 298);
+            this.rectanglesXTextBox.Name = "rectanglesXTextBox";
+            this.rectanglesXTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rectanglesXTextBox.TabIndex = 6;
+            this.rectanglesXTextBox.TextChanged += new System.EventHandler(this.XTextBox_TextChanged);
             // 
-            // textBox1
+            // rectanglesIdTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 272);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdTextBox_KeyPress);
+            this.rectanglesIdTextBox.Location = new System.Drawing.Point(71, 272);
+            this.rectanglesIdTextBox.Name = "rectanglesIdTextBox";
+            this.rectanglesIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rectanglesIdTextBox.TabIndex = 5;
+            this.rectanglesIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdTextBox_KeyPress);
             // 
             // label1
             // 
@@ -948,11 +948,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox rectanglesLengthTextBox;
+        private System.Windows.Forms.TextBox rectanglesWidthTextBox;
+        private System.Windows.Forms.TextBox rectanglesYTextBox;
+        private System.Windows.Forms.TextBox rectanglesXTextBox;
+        private System.Windows.Forms.TextBox rectanglesIdTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button deleteRectangleButton;
         private System.Windows.Forms.Button addRectangleButton;
