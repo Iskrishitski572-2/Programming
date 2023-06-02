@@ -1,12 +1,10 @@
-﻿namespace Programming.Model.Enums
+﻿
+public enum Genre
 {
-    public enum Genre
-    {
-        Comedy,
-        Drama,
-        Thriller,
-        ActionMovie, 
-        Horror,
-        Blockbuster
-    }   
+    Horrors,
+    Comedies,
+    Dramas,
+    Thrillers,
+    Fighters,
+    Blockbusters
 }

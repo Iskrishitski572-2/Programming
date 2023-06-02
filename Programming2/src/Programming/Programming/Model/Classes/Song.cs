@@ -1,29 +1,30 @@
-﻿namespace Programming.Model.Classes
-{ 
+﻿namespace Programming.Model
+{
     public class Song
     {
-        private int _durationSeconds;
+        private int _songLengthInMinutes;
 
-        public Song(string author, string nameSong, int durationSeconds)
+        public Song(string artistsName, string songsName, int songLengthInMinutes)
         {
-            Author = author;
-            NameSong = nameSong;
-            DurationSeconds = durationSeconds;
+            ArtistsName = artistsName;
+            SongsName = songsName;
+            SongLengthInMinutes = songLengthInMinutes;
         }
 
         public Song() { }
-    
-        public string Author { get; set; }
 
-        public string NameSong { get; set; }
+        public string ArtistsName { get; set; }
+        public string SongsName { get; set; }
 
-        public int DurationSeconds
+        public int SongLengthInMinutes
         {
-            get => _durationSeconds;
-            set
+            get { return _songLengthInMinutes; }
+
+            set 
             {
-                Validator.AssertOnPositiveValue(value, nameof(DurationSeconds));
-                _durationSeconds = value;
+                Validator.AssertOnPositiveValue(value, nameof(SongLengthInMinutes));
+
+                _songLengthInMinutes = value;
             }
         }
     }

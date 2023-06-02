@@ -1,42 +1,33 @@
-﻿namespace Programming.Model.Classes
+﻿namespace Programming.Model
 {
     public class Discipline
     {
-        private int _semesterNumber;
-        private int _semesterGrade;
+        private int _assessmentForTheSemester;
 
-        public Discipline(string nameDiscipline, string nameTeacher, int semesterNumber, int semesterGrade)
+        public Discipline(string disciplinesName, string nameTeacher, int assessmentForTheSemester)
         {
-            NameDiscipline = nameDiscipline;
+            DisciplinesName = disciplinesName;
             NameTeacher = nameTeacher;
-            SemesterNumber = semesterNumber;
-            SemesterGrade = semesterGrade;
+            AssessmentForTheSemester = assessmentForTheSemester;
         }
 
         public Discipline() { }
-    
-        public string NameDiscipline { get; set; }
 
+        public string DisciplinesName { get; set; }
         public string NameTeacher { get; set; }
 
-        public int SemesterNumber
+        public int AssessmentForTheSemester
         {
-            get => _semesterNumber;
+            get { return _assessmentForTheSemester; }
+
             set
             {
-                Validator.AssertValueInRange(value, nameof(SemesterNumber), 1, 8);
-                _semesterNumber = value;
+                Validator.AssertValueInRange(value, nameof(AssessmentForTheSemester), 2, 5);
+
+                _assessmentForTheSemester = value;
+
             }
         }
 
-        public int SemesterGrade
-        {
-            get => _semesterGrade;
-            set
-            {
-                Validator.AssertValueInRange(value, nameof(SemesterGrade), 2, 5);
-                _semesterGrade = value;
-            }
-        }
     }
 }

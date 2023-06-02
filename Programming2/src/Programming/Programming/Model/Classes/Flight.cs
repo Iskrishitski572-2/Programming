@@ -1,30 +1,32 @@
-﻿namespace Programming.Model.Classes
+﻿namespace Programming.Model
 {
     public class Flight
     {
-        private int _flightTimeMinutes;
+        private int _flightTimeInMinutes;
 
-        public Flight(string departurePoint, string destination, int flightTimeMinutes)
+        public Flight(string departurePoint, string destination, int fligthTimeInMinutes)
         {
             DeparturePoint = departurePoint;
             Destination = destination;
-            FlightTimeMinutes = flightTimeMinutes;
+            FlightTimeInMinutes = fligthTimeInMinutes;
         }
 
         public Flight() { }
-    
+
         public string DeparturePoint { get; set; }
 
         public string Destination { get; set; }
 
-        public int FlightTimeMinutes
+        public int FlightTimeInMinutes
         {
-            get => _flightTimeMinutes;
+            get { return _flightTimeInMinutes; }
+            
             set
             {
-                Validator.AssertOnPositiveValue(value, nameof(FlightTimeMinutes));
-                _flightTimeMinutes = value;
-            }
+                Validator.AssertOnPositiveValue(value, nameof(FlightTimeInMinutes));
+
+                _flightTimeInMinutes = value;
+            }   
         }
     }
 }
