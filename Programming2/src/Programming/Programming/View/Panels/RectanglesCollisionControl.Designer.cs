@@ -116,7 +116,6 @@
             this.IdRectangleLabel.Size = new System.Drawing.Size(20, 15);
             this.IdRectangleLabel.TabIndex = 25;
             this.IdRectangleLabel.Text = "Id:";
-            this.IdRectangleLabel.Click += new System.EventHandler(this.IdRectangleLabel_Click);
             // 
             // XRectangleLabel
             // 

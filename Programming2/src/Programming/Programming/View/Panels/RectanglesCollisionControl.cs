@@ -267,10 +267,5 @@ namespace Programming.View.Panels
                 }
             }
         }
-
-        private void IdRectangleLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
