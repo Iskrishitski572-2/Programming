@@ -1,4 +1,4 @@
-﻿namespace Programming.Model.Classes
+﻿namespace Programming.Model
 {
     public class Time
     {
@@ -14,35 +14,41 @@
         }
 
         public Time() { }
-    
+
         public int Hours
         {
-            get => _hours;
-            set
+            get { return _hours; }
+
+            set 
             {
                 Validator.AssertValueInRange(value, nameof(Hours), 0, 23);
+
                 _hours = value;
             }
         }
 
         public int Minutes
         {
-            get => _minutes;
-            set
+            get { return _minutes; }
+
+            set 
             {
                 Validator.AssertValueInRange(value, nameof(Minutes), 0, 59);
+
                 _minutes = value;
             }
         }
 
         public int Seconds
         {
-            get => _seconds;
-            set
+            get { return _seconds; }
+
+            set 
             {
                 Validator.AssertValueInRange(value, nameof(Seconds), 0, 59);
+
                 _seconds = value;
             }
         }
-    }   
+    }
 }

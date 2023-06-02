@@ -6,7 +6,7 @@
         {
             if (value <= 0)
             {
-                throw new System.ArgumentException($"{name} должно быть больше нуля");
+                throw new System.ArgumentException($"{name} должно быть больше или равно нулю");
             }
         }
 
@@ -14,7 +14,7 @@
         {
             if (value <= 0)
             {
-                throw new System.ArgumentException($"{name} должно быть больше нуля");
+                throw new System.ArgumentException($"{name} должно быть больше или равно нулю");
             }
         }
 
