@@ -1,4 +1,7 @@
-﻿public enum Colors
+﻿/// <summary>
+/// Перечисление цветов.
+/// </summary>
+public enum Colors
 {
     Yellow,
     Black,

@@ -1,4 +1,6 @@
-﻿
+﻿/// <summary>
+/// Перечисление времен года.
+/// </summary>
 public enum Season
 {
     Winter,

@@ -44,7 +44,7 @@
             // 
             // FindMovieButton
             // 
-            this.FindMovieButton.Location = new System.Drawing.Point(186, 257);
+            this.FindMovieButton.Location = new System.Drawing.Point(186, 261);
             this.FindMovieButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FindMovieButton.Name = "FindMovieButton";
             this.FindMovieButton.Size = new System.Drawing.Size(127, 46);
@@ -128,7 +128,7 @@
             // DuractionLabel
             // 
             this.DuractionLabel.AutoSize = true;
-            this.DuractionLabel.Location = new System.Drawing.Point(186, 58);
+            this.DuractionLabel.Location = new System.Drawing.Point(186, 60);
             this.DuractionLabel.Name = "DuractionLabel";
             this.DuractionLabel.Size = new System.Drawing.Size(62, 15);
             this.DuractionLabel.TabIndex = 14;
@@ -137,7 +137,7 @@
             // MoviesNameLabel
             // 
             this.MoviesNameLabel.AutoSize = true;
-            this.MoviesNameLabel.Location = new System.Drawing.Point(186, 14);
+            this.MoviesNameLabel.Location = new System.Drawing.Point(186, 18);
             this.MoviesNameLabel.Name = "MoviesNameLabel";
             this.MoviesNameLabel.Size = new System.Drawing.Size(81, 15);
             this.MoviesNameLabel.TabIndex = 13;
@@ -147,10 +147,10 @@
             // 
             this.FilmListBox.FormattingEnabled = true;
             this.FilmListBox.ItemHeight = 15;
-            this.FilmListBox.Location = new System.Drawing.Point(11, 14);
+            this.FilmListBox.Location = new System.Drawing.Point(11, 18);
             this.FilmListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FilmListBox.Name = "FilmListBox";
-            this.FilmListBox.Size = new System.Drawing.Size(170, 289);
+            this.FilmListBox.Size = new System.Drawing.Size(165, 289);
             this.FilmListBox.TabIndex = 12;
             this.FilmListBox.SelectedIndexChanged += new System.EventHandler(this.FilmListBox_SelectedIndexChanged);
             // 

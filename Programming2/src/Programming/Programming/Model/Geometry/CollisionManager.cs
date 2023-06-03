@@ -1,7 +1,17 @@
 ﻿namespace Programming.Model.Geometry
 {
+    /// <summary>
+    /// Реализует статическую проверку на пересечение геометрических фигур.
+    /// </summary>
     public static class CollisionManager
     {
+        /// <summary>
+        /// Проверка пересечения прямоугольников.
+        /// </summary>
+        /// <param name="rectangle1">Первый прямоугольник.</param>
+        /// <param name="rectangle2">Второй прямоугольник.</param>
+        /// <returns>Возвращает true, если условия пересечения верны.
+        /// И false, если условия пересечения неверны.</returns>
         public static bool IsCollision(Rectangle rectangle1, Rectangle rectangle2)
         {
             var width1 = rectangle1.Width;
@@ -16,6 +26,13 @@
             return dX < (width1 + width2) / 2 && dY < (length1 + length2) / 2;
         }
 
+        /// <summary>
+        /// Проверка пересечения колец.
+        /// </summary>
+        /// <param name="ring1">Первое кольцо.</param>
+        /// <param name="ring2">Второе кольцо.</param>
+        /// <returns>Возвращает true, если условия пересечения верны.
+        /// И false, если условия пересечения неверны.</returns>
         public static bool IsCollision(Ring ring1, Ring ring2)
         {
             var radius1 = ring1.OuterRadius;

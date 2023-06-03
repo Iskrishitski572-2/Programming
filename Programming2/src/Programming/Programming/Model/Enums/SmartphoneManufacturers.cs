@@ -1,4 +1,6 @@
-﻿
+﻿/// <summary>
+/// Перечисление производителей телефонов.
+/// </summary>
 public enum SmartphoneManufacturers
 {
     Samsung,

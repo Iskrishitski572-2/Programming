@@ -1,4 +1,6 @@
-﻿
+﻿/// <summary>
+/// Перечисление жанров.
+/// </summary>
 public enum Genre
 {
     Horrors,
