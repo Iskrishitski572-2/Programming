@@ -117,7 +117,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon_512x512.ico" />
     <Content Include="Resources\add_button_512x512.png" />
     <Content Include="Resources\air_add.png" />
     <Content Include="Resources\air_plain_app_icon.ico" />
