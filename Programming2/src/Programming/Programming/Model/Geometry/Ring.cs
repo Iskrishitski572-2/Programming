@@ -1,4 +1,6 @@
-﻿namespace Programming.Model.Geometry
+﻿using Programming.Model.Classes;
+
+namespace Programming.Model.Geometry
 {
     /// <summary>
     /// Хранит данные о кольце.

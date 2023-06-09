@@ -1,4 +1,5 @@
-﻿namespace Programming.Model.Geometry
+﻿
+namespace Programming.Model.Geometry
 {
     /// <summary>
     /// Реализует статическую проверку на пересечение геометрических фигур.

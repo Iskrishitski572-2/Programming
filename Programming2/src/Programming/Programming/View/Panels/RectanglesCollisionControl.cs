@@ -1,5 +1,6 @@
 ﻿using Programming.Model.Geometry;
 using Programming.Model;
+using Programming.Model.Classes;
 using Rectangle = Programming.Model.Geometry.Rectangle;
 
 namespace Programming.View.Panels

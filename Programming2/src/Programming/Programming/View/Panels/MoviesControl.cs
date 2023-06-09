@@ -1,4 +1,5 @@
 ﻿using Programming.Model;
+using Programming.Model.Classes;
 
 namespace Programming.View.Panels
 {

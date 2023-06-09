@@ -1,4 +1,4 @@
-﻿namespace Programming.Model
+﻿namespace Programming.Model.Classes
 {
     /// <summary>
     /// Реализует статическую проверку на ошибки.

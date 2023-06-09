@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Programming.Model
+﻿namespace Programming.Model.Classes
 {
     /// <summary>
     /// Реализует статистическое хранение цветов.

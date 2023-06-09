@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Programming.Model
+namespace Programming.Model.Classes
 {
     /// <summary>
     /// Хранит данные о человеке и его контактных данных.

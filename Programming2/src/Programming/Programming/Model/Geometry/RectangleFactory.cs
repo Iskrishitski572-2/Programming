@@ -1,4 +1,5 @@
-﻿namespace Programming.Model.Geometry
+﻿
+namespace Programming.Model.Geometry
 {
     /// <summary>
     /// Реализуют статическую работу с прямоугольниками.

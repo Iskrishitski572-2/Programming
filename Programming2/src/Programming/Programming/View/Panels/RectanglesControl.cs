@@ -1,4 +1,5 @@
 ﻿using Programming.Model;
+using Programming.Model.Classes;
 using Programming.Model.Geometry;
 using Rectangle = Programming.Model.Geometry.Rectangle;
 
