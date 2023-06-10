@@ -53,10 +53,10 @@ namespace AirTravelApp.View
                SortedFlightsAdd();
             }
             
-            // timeDateTimePicker.MinDate = DateTime.Today;
+            timeDateTimePicker.MinDate = DateTime.Today;
             typeComboBox.Items.AddRange(_type);
         }
-        
+
         /// <summary>
         /// Выбор элемента в flightListBox с последующим обновлением информации в TextBox.
         /// </summary>
@@ -400,7 +400,7 @@ namespace AirTravelApp.View
         }
 
         /// <summary>
-        /// Cобытие вызова tooltip жля departurePointTextBox.
+        /// Cобытие вызова tooltip для departurePointTextBox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -410,7 +410,7 @@ namespace AirTravelApp.View
         }
 
         /// <summary>
-        /// Cобытие вызова tooltip жля destinationTextBox_MouseHover.
+        /// Cобытие вызова tooltip для destinationTextBox_MouseHover.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -420,7 +420,7 @@ namespace AirTravelApp.View
         }
 
         /// <summary>
-        /// Cобытие вызова tooltip жля flightTimeTextBox.
+        /// Cобытие вызова tooltip для flightTimeTextBox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

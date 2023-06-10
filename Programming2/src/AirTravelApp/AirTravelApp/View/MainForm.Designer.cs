@@ -68,7 +68,7 @@
             // departurePointTextBox
             // 
             this.departurePointTextBox.Enabled = false;
-            this.departurePointTextBox.Location = new System.Drawing.Point(95, 44);
+            this.departurePointTextBox.Location = new System.Drawing.Point(101, 45);
             this.departurePointTextBox.Name = "departurePointTextBox";
             this.departurePointTextBox.Size = new System.Drawing.Size(126, 20);
             this.departurePointTextBox.TabIndex = 1;
@@ -78,7 +78,7 @@
             // destinationTextBox
             // 
             this.destinationTextBox.Enabled = false;
-            this.destinationTextBox.Location = new System.Drawing.Point(95, 80);
+            this.destinationTextBox.Location = new System.Drawing.Point(101, 81);
             this.destinationTextBox.Name = "destinationTextBox";
             this.destinationTextBox.Size = new System.Drawing.Size(126, 20);
             this.destinationTextBox.TabIndex = 2;
@@ -88,7 +88,7 @@
             // flightTimeTextBox
             // 
             this.flightTimeTextBox.Enabled = false;
-            this.flightTimeTextBox.Location = new System.Drawing.Point(95, 151);
+            this.flightTimeTextBox.Location = new System.Drawing.Point(101, 152);
             this.flightTimeTextBox.Name = "flightTimeTextBox";
             this.flightTimeTextBox.Size = new System.Drawing.Size(126, 20);
             this.flightTimeTextBox.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             this.typeComboBox.Enabled = false;
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(95, 188);
+            this.typeComboBox.Location = new System.Drawing.Point(101, 189);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(126, 21);
             this.typeComboBox.TabIndex = 4;
@@ -110,7 +110,7 @@
             this.timeDateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.timeDateTimePicker.Enabled = false;
             this.timeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timeDateTimePicker.Location = new System.Drawing.Point(95, 116);
+            this.timeDateTimePicker.Location = new System.Drawing.Point(101, 117);
             this.timeDateTimePicker.Name = "timeDateTimePicker";
             this.timeDateTimePicker.ShowUpDown = true;
             this.timeDateTimePicker.Size = new System.Drawing.Size(126, 20);
@@ -141,8 +141,8 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(22, 188);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(28, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 21);
             this.label5.TabIndex = 10;
@@ -151,18 +151,18 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(22, 152);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(28, 152);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 17);
+            this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Flight Time:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(22, 116);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(28, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 8;
@@ -171,20 +171,20 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(22, 80);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(15, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Destination:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(0, 47);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(6, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Departure Point:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
