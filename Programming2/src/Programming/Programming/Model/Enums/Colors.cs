@@ -1,15 +1,18 @@
-﻿/// <summary>
-/// Перечисление цветов.
-/// </summary>
-public enum Colors
+﻿namespace Programming.Model.Enums 
 {
-    Yellow,
-    Black,
-    White,
-    Green,
-    Grey,
-    Red,
-    Blue,
-    Violet,
-    Orange
+    /// <summary>
+    /// Перечисление цветов.
+    /// </summary>
+    public enum Colors
+    {
+        Yellow,
+        Black,
+        White,
+        Green,
+        Grey,
+        Red,
+        Blue,
+        Violet,
+        Orange
+    }
 }

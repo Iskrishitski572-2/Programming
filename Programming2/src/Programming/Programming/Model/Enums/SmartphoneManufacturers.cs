@@ -1,13 +1,16 @@
-﻿/// <summary>
-/// Перечисление производителей телефонов.
-/// </summary>
-public enum SmartphoneManufacturers
+﻿namespace Programming.Model.Enums
 {
-    Samsung,
-    Apple,
-    Honor,
-    Xiaomi,
-    Huawei,
-    Lenovo,
-    Nokia
+    /// <summary>
+    /// Перечисление производителей телефонов.
+    /// </summary>
+    public enum SmartphoneManufacturers
+    {
+        Samsung,
+        Apple,
+        Honor,
+        Xiaomi,
+        Huawei,
+        Lenovo,
+        Nokia
+    }
 }

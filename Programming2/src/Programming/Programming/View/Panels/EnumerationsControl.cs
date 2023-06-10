@@ -1,4 +1,6 @@
-﻿namespace Programming.View.Panels
+﻿using Programming.Model.Enums;
+
+namespace Programming.View.Panels
 {
     /// <summary>
     /// Предоставляет шаблон пользовательского интерфейса EnumerationsControl.
@@ -27,6 +29,7 @@
 
             // Заполнение EnumsListBox всеми перечислениями.
             EnumsListBox.Items.AddRange(_enums);
+            EnumsListBox.DisplayMember = nameof(FileInfo.Name);
         }
 
         /// <summary>

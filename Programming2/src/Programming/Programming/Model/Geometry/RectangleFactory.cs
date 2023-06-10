@@ -1,4 +1,5 @@
-﻿
+﻿using Programming.Model.Enums;
+
 namespace Programming.Model.Geometry
 {
     /// <summary>

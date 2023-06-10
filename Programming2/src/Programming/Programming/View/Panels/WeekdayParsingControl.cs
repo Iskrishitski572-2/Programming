@@ -1,4 +1,6 @@
-﻿namespace Programming.View.Panels
+﻿using Programming.Model.Enums;
+
+namespace Programming.View.Panels
 {
     /// <summary>
     /// Предоставляет шаблон пользовательского интерфейса WeekdayParsingControl.

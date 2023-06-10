@@ -1,10 +1,13 @@
-﻿/// <summary>
-/// Перечисление форм обучения.
-/// </summary>
-public enum StudentEducation
+﻿namespace Programming.Model.Enums
 {
-    FullTime,
-    Correspondence,
-    Evening,
-    Remote
+    /// <summary>
+    /// Перечисление форм обучения.
+    /// </summary>
+    public enum StudentEducation
+    {
+        FullTime,
+        Correspondence,
+        Evening,
+        Remote
+    }
 }

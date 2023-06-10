@@ -1,5 +1,6 @@
 ﻿using Programming.Model;
 using Programming.Model.Classes;
+using Programming.Model.Enums;
 
 namespace Programming.View.Panels
 {

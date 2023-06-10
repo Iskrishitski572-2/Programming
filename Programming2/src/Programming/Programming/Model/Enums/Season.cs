@@ -1,10 +1,13 @@
-﻿/// <summary>
-/// Перечисление времен года.
-/// </summary>
-public enum Season
+﻿namespace Programming.Model.Enums
 {
-    Winter,
-    Spring,
-    Summer,
-    Autumn
+    /// <summary>
+    /// Перечисление времен года.
+    /// </summary>
+    public enum Season
+    {
+        Winter,
+        Spring,
+        Summer,
+        Autumn
+    }
 }

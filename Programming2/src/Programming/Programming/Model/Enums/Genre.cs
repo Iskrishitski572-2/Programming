@@ -1,12 +1,15 @@
-﻿/// <summary>
-/// Перечисление жанров.
-/// </summary>
-public enum Genre
+﻿namespace Programming.Model.Enums
 {
-    Horrors,
-    Comedies,
-    Dramas,
-    Thrillers,
-    Fighters,
-    Blockbusters
+    /// <summary>
+    /// Перечисление жанров.
+    /// </summary>
+    public enum Genre
+    {
+        Horrors,
+        Comedies,
+        Dramas,
+        Thrillers,
+        Fighters,
+        Blockbusters
+    }
 }

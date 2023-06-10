@@ -1,13 +1,16 @@
-﻿/// <summary>
-/// Перечисление дней недели.
-/// </summary>
-public enum Weekday
+﻿namespace Programming.Model.Enums
 {
-    Monday = 1,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday
+    /// <summary>
+    /// Перечисление дней недели.
+    /// </summary>
+    public enum Weekday
+    {
+        Monday = 1,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
 }
