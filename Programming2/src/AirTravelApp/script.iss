@@ -21,7 +21,7 @@ DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 OutputBaseFilename=setup
-SetupIconFile=AirTravelApp\Resources\icon_512x512.ico
+SetupIconFile=AirTravelApp\Resources\air_plain_app_icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
