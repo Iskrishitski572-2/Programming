@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ObjectOrientedPractics.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.Model
+namespace ObjectOrientedPractics.Model
 {
     public class Customer
     {
@@ -19,7 +20,7 @@ namespace WindowsFormsApp1.Model
             get => _fullName;
             set
             {
-                //VALUDATOR
+                ValueValidator.AssertStringOnLength(value, 200, FullName);
                 _fullName = value;
             }
         }
@@ -29,7 +30,7 @@ namespace WindowsFormsApp1.Model
             get => _adress;
             set
             {
-                //VALUDATOR
+                ValueValidator.AssertStringOnLength(value, 500, Adress);
                 _adress = value;
             }
         }
@@ -39,7 +40,7 @@ namespace WindowsFormsApp1.Model
             FullName = fullName;
             Adress = adress;
 
-            //Id = GENERATOR id;
+            Id = IdGenerator.GetNewIdCustomer();
 
 
         }

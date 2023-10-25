@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectOrientedPractics.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace ObjectOrientedPractics.Model
             get => _name;
             set
             {
-                //VALIDATOR
+                ValueValidator.AssertStringOnLength(value, 200, Name);
                 _name = value;
             }
         }
@@ -31,7 +32,7 @@ namespace ObjectOrientedPractics.Model
             get => _info;
             set
             {
-                //VALIDATOR
+                ValueValidator.AssertStringOnLength(value,200,Info);
                 _info = value;
             }
         }
@@ -41,7 +42,7 @@ namespace ObjectOrientedPractics.Model
             get => _cost;
             set
             {
-                //VALUDATOR
+                ValueValidator.AssertValueInRange(value, 0, 100000, nameof(Cost));
                 _cost = value;
             }
         }
@@ -51,7 +52,7 @@ namespace ObjectOrientedPractics.Model
             Name = name;
             Info = info;
             Cost = cost;
-            //Id = ID GENERATOR id;
+            Id = IdGenerator.GetNewIdItem();
         }
     }
 
