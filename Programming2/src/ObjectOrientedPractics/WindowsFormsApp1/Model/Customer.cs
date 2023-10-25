@@ -39,10 +39,7 @@ namespace ObjectOrientedPractics.Model
         {
             FullName = fullName;
             Adress = adress;
-
             Id = IdGenerator.GetNewIdCustomer();
-
-
         }
 
 
