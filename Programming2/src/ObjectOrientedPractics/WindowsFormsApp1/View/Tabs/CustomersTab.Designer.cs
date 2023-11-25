@@ -55,9 +55,9 @@
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(3, 533);
+            this.acceptButton.Location = new System.Drawing.Point(6, 398);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(83, 35);
+            this.acceptButton.Size = new System.Drawing.Size(145, 62);
             this.acceptButton.TabIndex = 9;
             this.acceptButton.Text = "ACCEPT";
             this.acceptButton.UseVisualStyleBackColor = true;
@@ -66,9 +66,10 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(296, 530);
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.Location = new System.Drawing.Point(234, 398);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(83, 35);
+            this.cancelButton.Size = new System.Drawing.Size(148, 62);
             this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "CANCEL";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -88,6 +89,8 @@
             // 
             // fullNameTextBox
             // 
+            this.fullNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fullNameTextBox.Location = new System.Drawing.Point(6, 99);
             this.fullNameTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.fullNameTextBox.Name = "fullNameTextBox";
@@ -98,6 +101,8 @@
             // 
             // idTextBox
             // 
+            this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.idTextBox.Location = new System.Drawing.Point(6, 38);
             this.idTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.idTextBox.Name = "idTextBox";
@@ -254,6 +259,8 @@
             // addressControl1
             // 
             this.addressControl1.Address = null;
+            this.addressControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addressControl1.Location = new System.Drawing.Point(3, 206);
             this.addressControl1.Name = "addressControl1";
             this.addressControl1.Size = new System.Drawing.Size(379, 186);

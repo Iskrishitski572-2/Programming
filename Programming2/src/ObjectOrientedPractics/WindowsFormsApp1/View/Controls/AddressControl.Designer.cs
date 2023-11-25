@@ -81,6 +81,8 @@
             // 
             // cityTextBox
             // 
+            this.cityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cityTextBox.Location = new System.Drawing.Point(231, 90);
             this.cityTextBox.Margin = new System.Windows.Forms.Padding(3, 10, 20, 3);
             this.cityTextBox.Name = "cityTextBox";
@@ -90,6 +92,8 @@
             // 
             // streetTextBox
             // 
+            this.streetTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.streetTextBox.Location = new System.Drawing.Point(59, 123);
             this.streetTextBox.Margin = new System.Windows.Forms.Padding(3, 10, 20, 3);
             this.streetTextBox.Name = "streetTextBox";
@@ -108,6 +112,8 @@
             // 
             // apartmentTextBox
             // 
+            this.apartmentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.apartmentTextBox.Location = new System.Drawing.Point(232, 156);
             this.apartmentTextBox.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.apartmentTextBox.Name = "apartmentTextBox";

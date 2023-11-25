@@ -38,6 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.categoryLabel = new System.Windows.Forms.Label();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.acceptButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.costLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
-            this.categoryLabel = new System.Windows.Forms.Label();
             this.customersLayoutPanelMain.SuspendLayout();
             this.customersLayoutPanelLeft.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -191,8 +191,19 @@
             this.panel1.Size = new System.Drawing.Size(394, 574);
             this.panel1.TabIndex = 1;
             // 
+            // categoryLabel
+            // 
+            this.categoryLabel.AutoSize = true;
+            this.categoryLabel.Location = new System.Drawing.Point(3, 150);
+            this.categoryLabel.Name = "categoryLabel";
+            this.categoryLabel.Size = new System.Drawing.Size(52, 13);
+            this.categoryLabel.TabIndex = 11;
+            this.categoryLabel.Text = "Category:";
+            // 
             // categoryComboBox
             // 
+            this.categoryComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.categoryComboBox.Enabled = false;
             this.categoryComboBox.FormattingEnabled = true;
             this.categoryComboBox.Location = new System.Drawing.Point(61, 147);
@@ -236,6 +247,8 @@
             // 
             // descriptionTextBox
             // 
+            this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionTextBox.Location = new System.Drawing.Point(6, 396);
             this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.descriptionTextBox.Multiline = true;
@@ -268,6 +281,8 @@
             // 
             // nameTextBox
             // 
+            this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nameTextBox.Location = new System.Drawing.Point(6, 227);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.nameTextBox.Multiline = true;
@@ -279,6 +294,8 @@
             // 
             // costTextBox
             // 
+            this.costTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.costTextBox.Location = new System.Drawing.Point(61, 86);
             this.costTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.costTextBox.Name = "costTextBox";
@@ -289,6 +306,8 @@
             // 
             // idTextBox
             // 
+            this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.idTextBox.Location = new System.Drawing.Point(61, 25);
             this.idTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.idTextBox.Name = "idTextBox";
@@ -313,15 +332,6 @@
             this.idLabel.Size = new System.Drawing.Size(21, 13);
             this.idLabel.TabIndex = 0;
             this.idLabel.Text = "ID:";
-            // 
-            // categoryLabel
-            // 
-            this.categoryLabel.AutoSize = true;
-            this.categoryLabel.Location = new System.Drawing.Point(3, 150);
-            this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(52, 13);
-            this.categoryLabel.TabIndex = 11;
-            this.categoryLabel.Text = "Category:";
             // 
             // ItemsTab
             // 
