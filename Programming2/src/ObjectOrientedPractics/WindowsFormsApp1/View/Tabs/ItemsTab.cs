@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Services;
+using System.ComponentModel;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -32,6 +33,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Возвращает и задает список товаров.
         /// </summary>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Item> Items { get { return _items; } set { _items = value; } }
 
         /// <summary>

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.View.Controls;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -13,16 +14,9 @@ namespace ObjectOrientedPractics.View.Tabs
     public partial class CustomersTab : UserControl
     {
         /// <summary>
-        /// Список покупателей.
-        /// </summary>
-        private List<Customer> _customers = new List<Customer>();
-
-      
-        /// <summary>
         /// Текущий выбранный покупатель.
         /// </summary>
         private Customer _currentCustomer;
-
 
         /// <summary>
         /// Флаг для смены события AcceptButton. Если он == true добавляем customer иначе редактируем.
@@ -30,11 +24,22 @@ namespace ObjectOrientedPractics.View.Tabs
         private bool _flag = false;
 
         /// <summary>
+        /// Проверка на валидацию.
+        /// </summary>
+        private bool _switchValidation = false;
+
+        /// <summary>
+        /// Возвращает и задает список покупателей.
+        /// </summary>
+        public List<Customer> Customers { get; set; }
+
+        /// <summary>
         /// Создает экземпляр класса CustomerTap.
         /// </summary>
         public CustomersTab()
         {
             InitializeComponent();
+            addressControl1.ValidationRequested += AddressControlValidationRequested;
         }
 
         /// <summary>
@@ -61,7 +66,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void EnabledTextBox()
         {
             fullNameTextBox.ReadOnly = false;
-            addressTextBox.ReadOnly = false;
+            addressControl1.EnabledTextBox();
             customersListBox.Enabled = false;
         }
 
@@ -71,7 +76,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void DisabledTextBox()
         {
             fullNameTextBox.ReadOnly = true;
-            addressTextBox.ReadOnly = true;
+            addressControl1.DisabledTextBox();
             customersListBox.Enabled = true;
         }
 
@@ -108,7 +113,11 @@ namespace ObjectOrientedPractics.View.Tabs
             DisabledButtons();
             ClearTextBox();
 
+            _currentCustomer = new Customer();
+            addressControl1.Address = new Address();
             _flag = true;
+            _switchValidation = true;
+            addressControl1._switchValidation = true;
         }
 
         /// <summary>
@@ -116,11 +125,11 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void AddCustomer()
         {
-            var fullName = fullNameTextBox.Text;
-            var address = addressTextBox.Text;
+            var fullName = _currentCustomer.FullName;
+            var address = addressControl1.Address;
             var customer = new Customer(fullName, address);
 
-            _customers.Add(customer);
+            Customers.Add(customer);
             customersListBox.Items.Add(customer.FullName);
 
             DisabledVisibleButtonsAccept();
@@ -141,6 +150,9 @@ namespace ObjectOrientedPractics.View.Tabs
             DisabledButtons();
 
             _flag = false;
+            _switchValidation = true;
+            addressControl1._switchValidation = true;
+
         }
 
         /// <summary>
@@ -148,10 +160,10 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void EditCustomer()
         {
-            _currentCustomer.Address = addressTextBox.Text;
+            _currentCustomer.Address = addressControl1.Address;
             _currentCustomer.FullName = fullNameTextBox.Text;
 
-            _customers[customersListBox.SelectedIndex] = _currentCustomer;
+            Customers[customersListBox.SelectedIndex] = _currentCustomer;
             customersListBox.Items[customersListBox.SelectedIndex] = _currentCustomer.FullName;
 
 
@@ -167,7 +179,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void RemoveButtonClick(object sender, EventArgs e)
         {
-            _customers.RemoveAt(customersListBox.SelectedIndex);
+            Customers.RemoveAt(customersListBox.SelectedIndex);
             customersListBox.Items.RemoveAt(customersListBox.SelectedIndex);
             ClearTextBox();
         }
@@ -179,6 +191,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void AcceptButtonClick(object sender, System.EventArgs e)
         {
+            _switchValidation = false;
+            addressControl1._switchValidation = false;
             if (_flag)
             {
                 AddCustomer();
@@ -196,6 +210,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void CancelButtonClick(object sender, EventArgs e)
         {
+            _switchValidation = false;
+            addressControl1._switchValidation = false;
             if (_flag)
             {
                 EnabledButtons();
@@ -220,7 +236,8 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             idTextBox.Text = _currentCustomer.Id.ToString();
             fullNameTextBox.Text = _currentCustomer.FullName;
-            addressTextBox.Text = _currentCustomer.Address;
+            addressControl1.Address = _currentCustomer.Address;
+            addressControl1.FillInfo();
         }
 
         /// <summary>
@@ -237,9 +254,11 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             else
             {
-                _currentCustomer = _customers[customersListBox.SelectedIndex];
+
+                _currentCustomer = Customers[customersListBox.SelectedIndex];
                 removeButton.Enabled = true;
                 editButton.Enabled = true;
+                addressControl1.Address = _currentCustomer.Address;
                 FillInfo();
             }
         }
@@ -251,48 +270,33 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             idTextBox.Text = "";
             fullNameTextBox.Text = "";
-            addressTextBox.Text = "";
+            addressControl1.ClearTextBox();
         }
 
         /// <summary>
-        /// Валидация fullNameTextBox на количество символов.
+        /// Валидация fullNameTextBox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void FullNameTextBoxTextChanged(object sender, EventArgs e)
         {
-            try
+            if (_switchValidation)
             {
-                var fullName = fullNameTextBox.Text;
+                try
+                {
+                    _currentCustomer.FullName = fullNameTextBox.Text;
+                    fullNameTextBox.BackColor = Color.White;
+                    CheckAcceptButton();
+                }
+                catch
+                {
+                    fullNameTextBox.BackColor = Color.Red;
+                    acceptButton.Enabled = false;
+                }
+            }
+            else
+            {
                 fullNameTextBox.BackColor = Color.White;
-                ValueValidator.AssertStringOnLength(fullName, 200, nameof(fullName));
-                CheckAcceptButton();
-            }
-            catch
-            {
-                fullNameTextBox.BackColor = Color.Red;
-                acceptButton.Enabled = false;
-            }
-        }
-
-        /// <summary>
-        /// Валидация addressTextBox на количество символов.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddressTextBoxTextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var address = addressTextBox.Text;
-                addressTextBox.BackColor = Color.White;
-                ValueValidator.AssertStringOnLength(address, 500, nameof(address));
-                CheckAcceptButton();
-            }
-            catch
-            {
-                addressTextBox.BackColor = Color.Red;
-                acceptButton.Enabled = false;
             }
         }
 
@@ -301,13 +305,29 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void CheckAcceptButton()
         {
-            var cost = fullNameTextBox.BackColor == Color.White;
-            var name = addressTextBox.BackColor == Color.White;
+            var fullName = fullNameTextBox.BackColor == Color.White;
+            var address = addressControl1.CheckAcceptButton();
 
-            if (cost && name)
+            if (fullName && address)
             {
                 acceptButton.Enabled = true;
             }
+            else
+            {
+                acceptButton.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Событие.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddressControlValidationRequested(object sender, EventArgs e)
+        {
+            bool allFieldsValid = addressControl1.CheckAcceptButton();
+
+            acceptButton.Enabled = allFieldsValid;
         }
     }
 }

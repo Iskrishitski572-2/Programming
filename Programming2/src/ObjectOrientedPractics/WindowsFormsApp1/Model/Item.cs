@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Services;
+using System.ComponentModel;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -31,6 +32,8 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Возвращает и задает категорию товара.
         /// </summary>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Category Category { get; set; }
 
         /// <summary>

@@ -31,8 +31,6 @@
             this.acceptButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.selectedCustomerLabel = new System.Windows.Forms.Label();
-            this.addressLabel = new System.Windows.Forms.Label();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
             this.fullNameTextBox = new System.Windows.Forms.MaskedTextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.fullNameLabel = new System.Windows.Forms.Label();
@@ -47,6 +45,7 @@
             this.customersLayoutPanelLeft = new System.Windows.Forms.TableLayoutPanel();
             this.customersLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.customersLayoutPanelLeft.SuspendLayout();
@@ -56,7 +55,7 @@
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(6, 309);
+            this.acceptButton.Location = new System.Drawing.Point(3, 533);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(83, 35);
             this.acceptButton.TabIndex = 9;
@@ -67,7 +66,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(296, 309);
+            this.cancelButton.Location = new System.Drawing.Point(296, 530);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(83, 35);
             this.cancelButton.TabIndex = 8;
@@ -87,26 +86,6 @@
             this.selectedCustomerLabel.TabIndex = 3;
             this.selectedCustomerLabel.Text = "Selected customer";
             // 
-            // addressLabel
-            // 
-            this.addressLabel.AutoSize = true;
-            this.addressLabel.Location = new System.Drawing.Point(3, 160);
-            this.addressLabel.Margin = new System.Windows.Forms.Padding(3, 38, 3, 0);
-            this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(48, 13);
-            this.addressLabel.TabIndex = 5;
-            this.addressLabel.Text = "Address:";
-            // 
-            // addressTextBox
-            // 
-            this.addressTextBox.Location = new System.Drawing.Point(6, 175);
-            this.addressTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
-            this.addressTextBox.Multiline = true;
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.ReadOnly = true;
-            this.addressTextBox.Size = new System.Drawing.Size(373, 128);
-            this.addressTextBox.TabIndex = 4;
-            // 
             // fullNameTextBox
             // 
             this.fullNameTextBox.Location = new System.Drawing.Point(6, 99);
@@ -115,6 +94,7 @@
             this.fullNameTextBox.ReadOnly = true;
             this.fullNameTextBox.Size = new System.Drawing.Size(373, 20);
             this.fullNameTextBox.TabIndex = 3;
+            this.fullNameTextBox.TextChanged += new System.EventHandler(this.FullNameTextBoxTextChanged);
             // 
             // idTextBox
             // 
@@ -257,11 +237,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.addressControl1);
             this.panel1.Controls.Add(this.acceptButton);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.selectedCustomerLabel);
-            this.panel1.Controls.Add(this.addressLabel);
-            this.panel1.Controls.Add(this.addressTextBox);
             this.panel1.Controls.Add(this.fullNameTextBox);
             this.panel1.Controls.Add(this.idTextBox);
             this.panel1.Controls.Add(this.fullNameLabel);
@@ -271,6 +250,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(394, 574);
             this.panel1.TabIndex = 1;
+            // 
+            // addressControl1
+            // 
+            this.addressControl1.Address = null;
+            this.addressControl1.Location = new System.Drawing.Point(3, 206);
+            this.addressControl1.Name = "addressControl1";
+            this.addressControl1.Size = new System.Drawing.Size(379, 186);
+            this.addressControl1.TabIndex = 10;
             // 
             // CustomersTab
             // 
@@ -295,8 +282,6 @@
         private System.Windows.Forms.Button acceptButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label selectedCustomerLabel;
-        private System.Windows.Forms.Label addressLabel;
-        private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.MaskedTextBox fullNameTextBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label fullNameLabel;
@@ -311,5 +296,6 @@
         private System.Windows.Forms.TableLayoutPanel customersLayoutPanelLeft;
         private System.Windows.Forms.TableLayoutPanel customersLayoutPanelMain;
         private System.Windows.Forms.Panel panel1;
+        private Controls.AddressControl addressControl1;
     }
 }

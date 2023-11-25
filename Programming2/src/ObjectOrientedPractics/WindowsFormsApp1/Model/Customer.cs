@@ -15,7 +15,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Адрес покупателя.
         /// </summary>
-        private string _address;
+        private Address _address;
 
         /// <summary>
         /// Возвращает ID покупателя.
@@ -39,12 +39,11 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Возвращает и задает адрес. Должен быть не более 500 символов.
         /// </summary>
-        public string Address
+        public Address Address
         {
             get => _address;
             set
             {
-                ValueValidator.AssertStringOnLength(value, 500, Address);
                 _address = value;
             }
         }
@@ -55,11 +54,15 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         /// <param name="fullName">Полное имя. Должно быть не более 200 символов.</param>
         /// <param name="address">Адрес. Должен быть не более 500 символов</param>
-        public Customer(string fullName, string address)
+        public Customer(string fullName, Address address)
         {
             Id = IdGenerator.GetNewIdCustomer();
             FullName = fullName;
             Address = address;
+        }
+
+        public Customer()
+        {
         }
     }
 }
