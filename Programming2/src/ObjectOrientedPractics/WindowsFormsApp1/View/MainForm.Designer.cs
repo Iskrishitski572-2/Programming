@@ -98,7 +98,7 @@
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(689, 775);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Object Oriented Practics";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.customersTab1.ResumeLayout(false);

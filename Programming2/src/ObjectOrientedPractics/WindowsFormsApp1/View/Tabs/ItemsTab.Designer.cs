@@ -34,7 +34,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.itemsListBox = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,8 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.costTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             this.costLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.customersLayoutPanelMain.SuspendLayout();
@@ -76,7 +76,7 @@
             this.customersLayoutPanelLeft.ColumnCount = 1;
             this.customersLayoutPanelLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.customersLayoutPanelLeft.Controls.Add(this.tableLayoutPanel1, 0, 2);
-            this.customersLayoutPanelLeft.Controls.Add(this.listBox1, 0, 1);
+            this.customersLayoutPanelLeft.Controls.Add(this.itemsListBox, 0, 1);
             this.customersLayoutPanelLeft.Controls.Add(this.panel2, 0, 0);
             this.customersLayoutPanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customersLayoutPanelLeft.Location = new System.Drawing.Point(3, 3);
@@ -115,6 +115,7 @@
             this.addButton.TabIndex = 0;
             this.addButton.Text = "ADD";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButtonClick);
             // 
             // editButton
             // 
@@ -125,6 +126,7 @@
             this.editButton.TabIndex = 1;
             this.editButton.Text = "EDIT";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.EditButtonClick);
             // 
             // removeButton
             // 
@@ -135,15 +137,17 @@
             this.removeButton.TabIndex = 2;
             this.removeButton.Text = "REMOVE";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButtonClick);
             // 
-            // listBox1
+            // itemsListBox
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(268, 499);
-            this.listBox1.TabIndex = 1;
+            this.itemsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemsListBox.FormattingEnabled = true;
+            this.itemsListBox.Location = new System.Drawing.Point(3, 25);
+            this.itemsListBox.Name = "itemsListBox";
+            this.itemsListBox.Size = new System.Drawing.Size(268, 499);
+            this.itemsListBox.TabIndex = 1;
+            this.itemsListBox.SelectedIndexChanged += new System.EventHandler(this.ItemsListBoxSelectedIndexChanged);
             // 
             // panel2
             // 
@@ -173,8 +177,8 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.nameLabel);
             this.panel1.Controls.Add(this.nameTextBox);
-            this.panel1.Controls.Add(this.maskedTextBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.costTextBox);
+            this.panel1.Controls.Add(this.idTextBox);
             this.panel1.Controls.Add(this.costLabel);
             this.panel1.Controls.Add(this.idLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -191,6 +195,8 @@
             this.acceptButton.TabIndex = 9;
             this.acceptButton.Text = "ACCEPT";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Visible = false;
+            this.acceptButton.Click += new System.EventHandler(this.AcceptButtonClick);
             // 
             // cancelButton
             // 
@@ -200,6 +206,8 @@
             this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "CANCEL";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Visible = false;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
             // 
             // descriptionLabel
             // 
@@ -217,8 +225,10 @@
             this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ReadOnly = true;
             this.descriptionTextBox.Size = new System.Drawing.Size(373, 128);
             this.descriptionTextBox.TabIndex = 6;
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBoxTextChanged);
             // 
             // label5
             // 
@@ -247,24 +257,29 @@
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.nameTextBox.Multiline = true;
             this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(373, 128);
             this.nameTextBox.TabIndex = 4;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.NameTextBoxTextChanged);
             // 
-            // maskedTextBox1
+            // costTextBox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(61, 86);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(318, 20);
-            this.maskedTextBox1.TabIndex = 3;
+            this.costTextBox.Location = new System.Drawing.Point(61, 86);
+            this.costTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
+            this.costTextBox.Name = "costTextBox";
+            this.costTextBox.ReadOnly = true;
+            this.costTextBox.Size = new System.Drawing.Size(318, 20);
+            this.costTextBox.TabIndex = 3;
+            this.costTextBox.TextChanged += new System.EventHandler(this.CostTextBoxTextChanged);
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 25);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 20);
-            this.textBox1.TabIndex = 2;
+            this.idTextBox.Location = new System.Drawing.Point(61, 25);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(318, 20);
+            this.idTextBox.TabIndex = 2;
             // 
             // costLabel
             // 
@@ -310,11 +325,11 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox itemsListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.MaskedTextBox costTextBox;
+        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label costLabel;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Panel panel2;

@@ -1,20 +1,31 @@
 ﻿using ObjectOrientedPractics.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ObjectOrientedPractics.Model
 {
+    /// <summary>
+    /// Хранит данные о покупателе.
+    /// </summary>
     public class Customer
     {
+        /// <summary>
+        /// Полное имя покупателя.
+        /// </summary>
         private string _fullName;
 
-        private string _adress;
+        /// <summary>
+        /// Адрес покупателя.
+        /// </summary>
+        private string _address;
 
+        /// <summary>
+        /// Возвращает ID покупателя.
+        /// </summary>
         public int Id { get; }
 
+        /// <summary>
+        /// Возвращает и задает полное имя покупателя. Должно быть не более 200
+        /// символов.
+        /// </summary>
         public string FullName
         {
             get => _fullName;
@@ -25,23 +36,31 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
-        public string Adress
+        /// <summary>
+        /// Возвращает и задает адрес. Должен быть не более 500 символов.
+        /// </summary>
+        public string Address
         {
-            get => _adress;
+            get => _address;
             set
             {
-                ValueValidator.AssertStringOnLength(value, 500, Adress);
-                _adress = value;
+                ValueValidator.AssertStringOnLength(value, 500, Address);
+                _address = value;
             }
         }
 
-        public Customer(string fullName, string adress, int id)
+
+        /// <summary>
+        /// Создает экземпляр класса <see cref="Customer"/>.
+        /// </summary>
+        /// <param name="fullName">Полное имя. Должно быть не более 200 символов.</param>
+        /// <param name="address">Адрес. Должен быть не более 500 символов</param>
+        public Customer(string fullName, string address)
         {
-            FullName = fullName;
-            Adress = adress;
             Id = IdGenerator.GetNewIdCustomer();
+            FullName = fullName;
+            Address = address;
         }
-
-
     }
 }
+

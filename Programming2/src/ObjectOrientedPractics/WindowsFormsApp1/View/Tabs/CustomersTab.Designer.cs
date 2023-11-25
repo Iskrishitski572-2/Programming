@@ -37,7 +37,7 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.fullNameLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.customersListBox = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.customersLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
@@ -62,6 +62,8 @@
             this.acceptButton.TabIndex = 9;
             this.acceptButton.Text = "ACCEPT";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Visible = false;
+            this.acceptButton.Click += new System.EventHandler(this.AcceptButtonClick);
             // 
             // cancelButton
             // 
@@ -71,6 +73,8 @@
             this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "CANCEL";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Visible = false;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
             // 
             // selectedCustomerLabel
             // 
@@ -99,6 +103,7 @@
             this.addressTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.ReadOnly = true;
             this.addressTextBox.Size = new System.Drawing.Size(373, 128);
             this.addressTextBox.TabIndex = 4;
             // 
@@ -107,6 +112,7 @@
             this.fullNameTextBox.Location = new System.Drawing.Point(6, 99);
             this.fullNameTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.fullNameTextBox.Name = "fullNameTextBox";
+            this.fullNameTextBox.ReadOnly = true;
             this.fullNameTextBox.Size = new System.Drawing.Size(373, 20);
             this.fullNameTextBox.TabIndex = 3;
             // 
@@ -115,6 +121,7 @@
             this.idTextBox.Location = new System.Drawing.Point(6, 38);
             this.idTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(223, 20);
             this.idTextBox.TabIndex = 2;
             // 
@@ -136,14 +143,15 @@
             this.idLabel.TabIndex = 0;
             this.idLabel.Text = "ID:";
             // 
-            // listBox1
+            // customersListBox
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(268, 499);
-            this.listBox1.TabIndex = 1;
+            this.customersListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customersListBox.FormattingEnabled = true;
+            this.customersListBox.Location = new System.Drawing.Point(3, 25);
+            this.customersListBox.Name = "customersListBox";
+            this.customersListBox.Size = new System.Drawing.Size(268, 499);
+            this.customersListBox.TabIndex = 1;
+            this.customersListBox.SelectedIndexChanged += new System.EventHandler(this.CustomersListBoxSelectedIndexChanged);
             // 
             // panel2
             // 
@@ -173,6 +181,7 @@
             this.addButton.TabIndex = 0;
             this.addButton.Text = "ADD";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButtonClick);
             // 
             // editButton
             // 
@@ -183,6 +192,7 @@
             this.editButton.TabIndex = 1;
             this.editButton.Text = "EDIT";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.EditButtonClick);
             // 
             // removeButton
             // 
@@ -193,6 +203,7 @@
             this.removeButton.TabIndex = 2;
             this.removeButton.Text = "REMOVE";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButtonClick);
             // 
             // tableLayoutPanel1
             // 
@@ -217,7 +228,7 @@
             this.customersLayoutPanelLeft.ColumnCount = 1;
             this.customersLayoutPanelLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.customersLayoutPanelLeft.Controls.Add(this.tableLayoutPanel1, 0, 2);
-            this.customersLayoutPanelLeft.Controls.Add(this.listBox1, 0, 1);
+            this.customersLayoutPanelLeft.Controls.Add(this.customersListBox, 0, 1);
             this.customersLayoutPanelLeft.Controls.Add(this.panel2, 0, 0);
             this.customersLayoutPanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customersLayoutPanelLeft.Location = new System.Drawing.Point(3, 3);
@@ -290,7 +301,7 @@
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label fullNameLabel;
         private System.Windows.Forms.Label idLabel;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox customersListBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label customersLabel;
         private System.Windows.Forms.Button addButton;
