@@ -82,10 +82,12 @@
             // 
             // itemsTab1
             // 
-            this.itemsTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemsTab1.Location = new System.Drawing.Point(3, 3);
+            this.itemsTab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.itemsTab1.Location = new System.Drawing.Point(21, 32);
             this.itemsTab1.Name = "itemsTab1";
-            this.itemsTab1.Size = new System.Drawing.Size(732, 649);
+            this.itemsTab1.Size = new System.Drawing.Size(680, 580);
             this.itemsTab1.TabIndex = 0;
             // 
             // MainForm

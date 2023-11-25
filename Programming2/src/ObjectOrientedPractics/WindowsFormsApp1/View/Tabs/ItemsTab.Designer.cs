@@ -172,6 +172,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.categoryLabel);
             this.panel1.Controls.Add(this.categoryComboBox);
             this.panel1.Controls.Add(this.acceptButton);
@@ -185,7 +187,6 @@
             this.panel1.Controls.Add(this.idTextBox);
             this.panel1.Controls.Add(this.costLabel);
             this.panel1.Controls.Add(this.idLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(283, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(394, 574);
@@ -215,6 +216,8 @@
             // 
             // acceptButton
             // 
+            this.acceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.acceptButton.Location = new System.Drawing.Point(3, 533);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(83, 35);
@@ -226,6 +229,8 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.Location = new System.Drawing.Point(296, 533);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(83, 35);
