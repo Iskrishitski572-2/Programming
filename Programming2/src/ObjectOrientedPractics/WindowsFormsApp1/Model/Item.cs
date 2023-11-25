@@ -25,7 +25,13 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Возвращает Id товара.
         /// </summary>
-        public int Id { get; }
+
+        public int Id { get; private set; }
+
+        /// <summary>
+        /// Возвращает и задает категорию товара.
+        /// </summary>
+        public Category Category { get; set; }
 
         /// <summary>
         /// Возвращает и задает названия товара. Должно быть не более 200
@@ -69,17 +75,25 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
-        ///  Создает экземпляр класса <see cref="Item"/>.
+        /// Создает экземпляр класса <see cref="Item"/>.
         /// </summary>
         /// <param name="name">Названия товара. Должно быть не более 200 символов.</param>
+        /// <param name="category">Категория товара.</param>
         /// <param name="info">Описания товара. Должно быть не более 1000 символов.</param>
         /// <param name="cost">Цена товара. Должно быть не более 100000.</param>
-        public Item(string name, string info, double cost)
+
+        public Item(string name, Category category, string info, double cost)
         {
             Id = IdGenerator.GetNewIdItem();
             Name = name;
+            Category = category;
             Info = info;
             Cost = cost;
         }
+
+        /// <summary>
+        /// Создает экземпляр класса <see cref="Item"/>.
+        /// </summary>
+        public Item() { }
     }
 }

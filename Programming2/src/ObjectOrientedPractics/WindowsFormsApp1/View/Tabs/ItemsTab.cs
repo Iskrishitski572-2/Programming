@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Services;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -13,9 +12,6 @@ namespace ObjectOrientedPractics.View.Tabs
     /// </summary>
     public partial class ItemsTab : UserControl
     {
-        /// <summary>
-        /// Список товаров.
-        /// </summary>
         private List<Item> _items = new List<Item>();
 
         /// <summary>
@@ -29,11 +25,23 @@ namespace ObjectOrientedPractics.View.Tabs
         private bool _flag = false;
 
         /// <summary>
+        /// Проверка на валидацию.
+        /// </summary>
+        private bool _switchValidation = false;
+
+        /// <summary>
+        /// Возвращает и задает список товаров.
+        /// </summary>
+        public List<Item> Items { get { return _items; } set { _items = value; } }
+
+        /// <summary>
         /// Создает экземпляр класса ItemsTab.
         /// </summary>
         public ItemsTab()
         {
             InitializeComponent();
+            var categories = Enum.GetNames(typeof(Category));
+            categoryComboBox.Items.AddRange(categories);
         }
 
         /// <summary>
@@ -59,6 +67,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void EnabledTextBox()
         {
+            categoryComboBox.Enabled = true;
             costTextBox.ReadOnly = false;
             nameTextBox.ReadOnly = false;
             descriptionTextBox.ReadOnly = false;
@@ -70,6 +79,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void DisabledTextBox()
         {
+            categoryComboBox.Enabled = false;
             costTextBox.ReadOnly = true;
             nameTextBox.ReadOnly = true;
             descriptionTextBox.ReadOnly = true;
@@ -109,8 +119,11 @@ namespace ObjectOrientedPractics.View.Tabs
             DisabledButtons();
             ClearTextBox();
             costTextBox.Text = "0";
+            categoryComboBox.SelectedIndex = 0;
 
+            _currentItem = new Item();
             _flag = true;
+            _switchValidation = true;
         }
 
         /// <summary>
@@ -118,18 +131,23 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void AddItem()
         {
-            var name = nameTextBox.Text;
-            var description = descriptionTextBox.Text;
-            var cost = Convert.ToDouble(costTextBox.Text);
-            var item = new Item(name, description, cost);
+            var name = _currentItem.Name;
+            var cost = _currentItem.Cost;
+            var category = _currentItem.Category;
+            var info = _currentItem.Info;
+            Item newItem = new Item(name, category, info, cost);
 
-            _items.Add(item);
-            itemsListBox.Items.Add(item.Name);
+
+            Items.Add(newItem);
+            itemsListBox.Items.Add(newItem.Name);
+            _switchValidation = false;
+
 
             DisabledVisibleButtonsAccept();
             EnabledButtons();
             DisabledTextBox();
             ClearTextBox();
+
         }
 
         /// <summary>
@@ -144,6 +162,7 @@ namespace ObjectOrientedPractics.View.Tabs
             DisabledButtons();
 
             _flag = false;
+            _switchValidation = true;
         }
 
         /// <summary>
@@ -151,13 +170,10 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void EditItem()
         {
-            _currentItem.Name = nameTextBox.Text;
-            _currentItem.Cost = Convert.ToDouble(costTextBox.Text);
-            _currentItem.Info = descriptionTextBox.Text;
-
-            _items[itemsListBox.SelectedIndex] = _currentItem;
+            Items[itemsListBox.SelectedIndex] = _currentItem;
             itemsListBox.Items[itemsListBox.SelectedIndex] = _currentItem.Name;
 
+            _switchValidation = false;
 
             DisabledVisibleButtonsAccept();
             EnabledButtons();
@@ -171,7 +187,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void RemoveButtonClick(object sender, EventArgs e)
         {
-            _items.RemoveAt(itemsListBox.SelectedIndex);
+            Items.RemoveAt(itemsListBox.SelectedIndex);
             itemsListBox.Items.RemoveAt(itemsListBox.SelectedIndex);
             ClearTextBox();
         }
@@ -200,6 +216,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void CancelButtonClick(object sender, EventArgs e)
         {
+            _switchValidation = false;
             if (_flag)
             {
                 EnabledButtons();
@@ -226,6 +243,7 @@ namespace ObjectOrientedPractics.View.Tabs
             costTextBox.Text = _currentItem.Cost.ToString();
             nameTextBox.Text = _currentItem.Name;
             descriptionTextBox.Text = _currentItem.Info;
+            categoryComboBox.Text = _currentItem.Category.ToString();
         }
 
         /// <summary>
@@ -242,7 +260,7 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             else
             {
-                _currentItem = _items[itemsListBox.SelectedIndex];
+                _currentItem = Items[itemsListBox.SelectedIndex];
                 removeButton.Enabled = true;
                 editButton.Enabled = true;
                 FillInfo();
@@ -258,6 +276,7 @@ namespace ObjectOrientedPractics.View.Tabs
             costTextBox.Text = "";
             nameTextBox.Text = "";
             descriptionTextBox.Text = "";
+            categoryComboBox.SelectedIndex = -1;
             costTextBox.BackColor = Color.White;
         }
 
@@ -268,18 +287,50 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void CostTextBoxTextChanged(object sender, EventArgs e)
         {
-            try
+            if (_switchValidation)
             {
-                var cost = Convert.ToDouble(costTextBox.Text);
-                costTextBox.BackColor = Color.White;
-
-                ValueValidator.AssertValueInRange(cost, 0, 100000, nameof(cost));
-                CheckAcceptButton();
+                try
+                {
+                    _currentItem.Cost = Convert.ToDouble(costTextBox.Text);
+                    costTextBox.BackColor = Color.White;
+                    CheckAcceptButton();
+                }
+                catch
+                {
+                    costTextBox.BackColor = Color.Red;
+                    acceptButton.Enabled = false;
+                }
             }
-            catch
+            else
             {
-                costTextBox.BackColor = Color.Red;
-                acceptButton.Enabled = false;
+                costTextBox.BackColor = Color.White;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CategoryComboBoxSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_switchValidation)
+            {
+                try
+                {
+                    _currentItem.Category = (Category)Enum.Parse(typeof(Category), categoryComboBox.Text);
+                    categoryComboBox.BackColor = Color.White;
+                    CheckAcceptButton();
+                }
+                catch
+                {
+                    categoryComboBox.BackColor = Color.Red;
+                    acceptButton.Enabled = false;
+                }
+            }
+            else
+            {
+                categoryComboBox.BackColor = Color.White;
             }
         }
 
@@ -290,17 +341,23 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void NameTextBoxTextChanged(object sender, EventArgs e)
         {
-            try
+            if (_switchValidation)
             {
-                var name = nameTextBox.Text;
-                nameTextBox.BackColor = Color.White;
-                ValueValidator.AssertStringOnLength(name, 200, nameof(name));
-                CheckAcceptButton();
+                try
+                {
+                    _currentItem.Name = nameTextBox.Text;
+                    nameTextBox.BackColor = Color.White;
+                    CheckAcceptButton();
+                }
+                catch
+                {
+                    nameTextBox.BackColor = Color.Red;
+                    acceptButton.Enabled = false;
+                }
             }
-            catch
+            else
             {
-                nameTextBox.BackColor = Color.Red;
-                acceptButton.Enabled = false;
+                nameTextBox.BackColor = Color.White;
             }
         }
 
@@ -311,17 +368,23 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void DescriptionTextBoxTextChanged(object sender, EventArgs e)
         {
-            try
+            if (_switchValidation)
             {
-                var description = descriptionTextBox.Text;
-                descriptionTextBox.BackColor = Color.White;
-                ValueValidator.AssertStringOnLength(description, 1000, nameof(description));
-                CheckAcceptButton();
+                try
+                {
+                    _currentItem.Info = descriptionTextBox.Text;
+                    descriptionTextBox.BackColor = Color.White;
+                    CheckAcceptButton();
+                }
+                catch
+                {
+                    descriptionTextBox.BackColor = Color.Red;
+                    acceptButton.Enabled = false;
+                }
             }
-            catch
+            else
             {
-                descriptionTextBox.BackColor = Color.Red;
-                acceptButton.Enabled = false;
+                descriptionTextBox.BackColor = Color.White;
             }
         }
 
@@ -331,10 +394,11 @@ namespace ObjectOrientedPractics.View.Tabs
         private void CheckAcceptButton()
         {
             var cost = costTextBox.BackColor == Color.White;
+            var category = categoryComboBox.BackColor == Color.White;
             var name = nameTextBox.BackColor == Color.White;
             var description = descriptionTextBox.BackColor == Color.White;
 
-            if (cost && name && description)
+            if (cost && category && name && description)
             {
                 acceptButton.Enabled = true;
             }

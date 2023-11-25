@@ -38,6 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.acceptButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.costLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
+            this.categoryLabel = new System.Windows.Forms.Label();
             this.customersLayoutPanelMain.SuspendLayout();
             this.customersLayoutPanelLeft.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -170,6 +172,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.categoryLabel);
+            this.panel1.Controls.Add(this.categoryComboBox);
             this.panel1.Controls.Add(this.acceptButton);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.descriptionLabel);
@@ -187,9 +191,20 @@
             this.panel1.Size = new System.Drawing.Size(394, 574);
             this.panel1.TabIndex = 1;
             // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.Enabled = false;
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(61, 147);
+            this.categoryComboBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(318, 21);
+            this.categoryComboBox.TabIndex = 10;
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBoxSelectedIndexChanged);
+            // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(6, 472);
+            this.acceptButton.Location = new System.Drawing.Point(3, 533);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(83, 35);
             this.acceptButton.TabIndex = 9;
@@ -200,7 +215,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(296, 472);
+            this.cancelButton.Location = new System.Drawing.Point(296, 533);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(83, 35);
             this.cancelButton.TabIndex = 8;
@@ -212,7 +227,7 @@
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(3, 325);
+            this.descriptionLabel.Location = new System.Drawing.Point(3, 372);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 38, 3, 0);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(63, 13);
@@ -221,7 +236,7 @@
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(6, 338);
+            this.descriptionTextBox.Location = new System.Drawing.Point(6, 396);
             this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
@@ -244,7 +259,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(3, 140);
+            this.nameLabel.Location = new System.Drawing.Point(3, 209);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(3, 38, 3, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(38, 13);
@@ -253,12 +268,12 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(6, 156);
+            this.nameTextBox.Location = new System.Drawing.Point(6, 227);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 3);
             this.nameTextBox.Multiline = true;
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
-            this.nameTextBox.Size = new System.Drawing.Size(373, 128);
+            this.nameTextBox.Size = new System.Drawing.Size(370, 128);
             this.nameTextBox.TabIndex = 4;
             this.nameTextBox.TextChanged += new System.EventHandler(this.NameTextBoxTextChanged);
             // 
@@ -298,6 +313,15 @@
             this.idLabel.Size = new System.Drawing.Size(21, 13);
             this.idLabel.TabIndex = 0;
             this.idLabel.Text = "ID:";
+            // 
+            // categoryLabel
+            // 
+            this.categoryLabel.AutoSize = true;
+            this.categoryLabel.Location = new System.Drawing.Point(3, 150);
+            this.categoryLabel.Name = "categoryLabel";
+            this.categoryLabel.Size = new System.Drawing.Size(52, 13);
+            this.categoryLabel.TabIndex = 11;
+            this.categoryLabel.Text = "Category:";
             // 
             // ItemsTab
             // 
@@ -340,5 +364,7 @@
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.Button acceptButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.Label categoryLabel;
     }
 }

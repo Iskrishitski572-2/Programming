@@ -128,7 +128,7 @@
             // fullNameLabel
             // 
             this.fullNameLabel.AutoSize = true;
-            this.fullNameLabel.Location = new System.Drawing.Point(3, 84);
+            this.fullNameLabel.Location = new System.Drawing.Point(3, 85);
             this.fullNameLabel.Name = "fullNameLabel";
             this.fullNameLabel.Size = new System.Drawing.Size(57, 13);
             this.fullNameLabel.TabIndex = 1;
