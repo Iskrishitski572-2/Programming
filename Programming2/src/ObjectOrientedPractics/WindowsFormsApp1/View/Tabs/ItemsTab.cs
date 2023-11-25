@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
-    public partial class ItemTab : UserControl
+    public partial class ItemsTab : UserControl
     {
-        public ItemTab()
+        public ItemsTab()
         {
             InitializeComponent();
         }
