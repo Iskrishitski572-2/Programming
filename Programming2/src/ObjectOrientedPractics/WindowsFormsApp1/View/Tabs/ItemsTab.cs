@@ -406,5 +406,19 @@ namespace ObjectOrientedPractics.View.Tabs
                 acceptButton.Enabled = true;
             }
         }
+
+        /// <summary>
+        /// Обновления itemsListBox.
+        /// </summary>
+        public void RefreshData()
+        {
+            if (Items.Count > 0)
+            {
+                foreach (var item in Items)
+                {
+                    itemsListBox.Items.Add(item.Name);
+                }
+            }
+        }
     }
 }

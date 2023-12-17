@@ -87,7 +87,7 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
-        /// Создает экземпляр класса <see cref="Customer"/>.
+        /// Создает экземпляр класса <see cref="Customer"/>. Используются для десериализации JSON файла.
         /// </summary>
         /// <param name="id">Id.</param>
         public Customer(int id)
@@ -101,6 +101,3 @@ namespace ObjectOrientedPractics.Model
         public Customer() { Cart = new Cart(); }
     }
 }
-
-
-

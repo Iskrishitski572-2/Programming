@@ -329,5 +329,19 @@ namespace ObjectOrientedPractics.View.Tabs
 
             acceptButton.Enabled = allFieldsValid;
         }
+
+        /// <summary>
+        /// Обновление customerListBox.
+        /// </summary>
+        public void RefreshData()
+        {
+            if (Customers.Count > 0)
+            {
+                foreach (var customer in Customers)
+                {
+                    customersListBox.Items.Add(customer.FullName);
+                }
+            }
+        }
     }
 }
