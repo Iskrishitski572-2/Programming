@@ -92,9 +92,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.customersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customersComboBox.FormattingEnabled = true;
-            this.customersComboBox.Location = new System.Drawing.Point(322, 17);
+            this.customersComboBox.Location = new System.Drawing.Point(244, 37);
             this.customersComboBox.Name = "customersComboBox";
-            this.customersComboBox.Size = new System.Drawing.Size(299, 21);
+            this.customersComboBox.Size = new System.Drawing.Size(433, 21);
             this.customersComboBox.TabIndex = 18;
             this.customersComboBox.SelectedIndexChanged += new System.EventHandler(this.CustomersComboBoxSelectedIndexChanged);
             // 
@@ -102,7 +102,7 @@
             // 
             this.clearCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.clearCartButton.Enabled = false;
-            this.clearCartButton.Location = new System.Drawing.Point(549, 308);
+            this.clearCartButton.Location = new System.Drawing.Point(605, 308);
             this.clearCartButton.Name = "clearCartButton";
             this.clearCartButton.Size = new System.Drawing.Size(72, 38);
             this.clearCartButton.TabIndex = 17;
@@ -114,7 +114,7 @@
             // 
             this.removeItemButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.removeItemButton.Enabled = false;
-            this.removeItemButton.Location = new System.Drawing.Point(462, 308);
+            this.removeItemButton.Location = new System.Drawing.Point(518, 308);
             this.removeItemButton.Name = "removeItemButton";
             this.removeItemButton.Size = new System.Drawing.Size(81, 38);
             this.removeItemButton.TabIndex = 16;
@@ -137,7 +137,7 @@
             // 
             this.addToCartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addToCartButton.Enabled = false;
-            this.addToCartButton.Location = new System.Drawing.Point(3, 380);
+            this.addToCartButton.Location = new System.Drawing.Point(3, 525);
             this.addToCartButton.Name = "addToCartButton";
             this.addToCartButton.Size = new System.Drawing.Size(86, 38);
             this.addToCartButton.TabIndex = 14;
@@ -152,7 +152,7 @@
             this.cartListBox.FormattingEnabled = true;
             this.cartListBox.Location = new System.Drawing.Point(243, 72);
             this.cartListBox.Name = "cartListBox";
-            this.cartListBox.Size = new System.Drawing.Size(378, 160);
+            this.cartListBox.Size = new System.Drawing.Size(434, 160);
             this.cartListBox.TabIndex = 13;
             this.cartListBox.SelectedIndexChanged += new System.EventHandler(this.CartListBoxSelectedIndexChanged);
             // 
@@ -163,7 +163,7 @@
             this.itemsListBox.FormattingEnabled = true;
             this.itemsListBox.Location = new System.Drawing.Point(3, 19);
             this.itemsListBox.Name = "itemsListBox";
-            this.itemsListBox.Size = new System.Drawing.Size(231, 355);
+            this.itemsListBox.Size = new System.Drawing.Size(231, 485);
             this.itemsListBox.TabIndex = 12;
             this.itemsListBox.SelectedIndexChanged += new System.EventHandler(this.ItemsListBoxSelectedIndexChanged);
             // 

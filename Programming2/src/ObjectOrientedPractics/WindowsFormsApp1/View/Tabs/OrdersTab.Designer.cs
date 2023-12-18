@@ -251,9 +251,10 @@
             // addressControl1
             // 
             this.addressControl1.Address = null;
-            this.addressControl1.Location = new System.Drawing.Point(280, 151);
+            this.addressControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addressControl1.Location = new System.Drawing.Point(286, 151);
             this.addressControl1.Name = "addressControl1";
-            this.addressControl1.Size = new System.Drawing.Size(397, 184);
+            this.addressControl1.Size = new System.Drawing.Size(391, 184);
             this.addressControl1.TabIndex = 28;
             // 
             // OrdersTab
