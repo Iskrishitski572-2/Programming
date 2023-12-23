@@ -1,8 +1,9 @@
 ﻿using ObjectOrientedPractics.Services;
 using System;
 using System.Collections.Generic;
+using ObjectOrientedPractics.Model.Enums;
 
-namespace ObjectOrientedPractics.Model
+namespace ObjectOrientedPractics.Model.Orders
 {
     /// <summary>
     /// Хранит данные о заказе.
@@ -10,83 +11,58 @@ namespace ObjectOrientedPractics.Model
     public class Order
     {
         /// <summary>
-        /// Id заказа.
-        /// </summary>
-        private int _id;
-
-        /// <summary>
-        /// Время создания заказа.
-        /// </summary>
-        private DateTime _createdDate;
-
-        /// <summary>
-        /// Состояние заказа.
-        /// </summary>
-        private OrderStatus _status;
-
-        /// <summary>
-        /// Адрес заказа.
-        /// </summary>
-        private Address _address;
-
-        /// <summary>
-        /// Полное имя;
-        /// </summary>
-        private string _fullName;
-
-        /// <summary>
-        /// Список товаров.
-        /// </summary>
-        private List<Item> _items;
-
-        /// <summary>
-        /// Сумма заказа.
-        /// </summary>
-        private double _amount;
-
-        /// <summary>
         /// Возвращает Id товара.
         /// </summary>
-        public int Id { get { return _id; } private set { _id = value; } }
+        public int Id { get; private set; }
 
         /// <summary>
         /// Возвращает дату создания заказа.
         /// </summary>
-        public DateTime CreatedDate { get { return _createdDate; } private set { _createdDate = value; } }
+        public DateTime CreatedDate { get; private set; }
 
         /// <summary>
         /// Возвращает и задает состояния заказа.
         /// </summary>
-        public OrderStatus Status { get { return _status; } set { _status = value; } }
+        public OrderStatus Status { get; set; }
 
         /// <summary>
         /// Возвращает и задает адрес заказа.
         /// </summary>
-        public Address Address { get { return _address; } set { _address = value; } }
+        public Address Address { get; set; }
 
         /// <summary>
         /// Возвращает и задает полное имя покупателя.
         /// </summary>
-        public string FullName { get { return _fullName; } set { _fullName = value; } }
+        public string FullName { get; set; }
 
         /// <summary>
         /// Возвращает и задает список товаров.
         /// </summary>
-        public List<Item> Items { get { return _items; } set { _items = value; } }
+        public List<Item> Items { get; set; }
 
         /// <summary>
         /// Возвращает и задает стоимость заказа.
         /// </summary>
-        public double Amount { get { return _amount; } set { _amount = value; } }
+        public double Amount { get; set; }
+
+        /// <summary>
+        /// Возвращает и задает сумму скидки на заказ.
+        /// </summary>
+        public double DiscountAmount { get; set; }
+
+        /// <summary>
+        /// Возвращает общую стоимость заказа с учетом скидки.
+        /// </summary>
+        public double Total => Amount - DiscountAmount;
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Order"/>.
         /// </summary>
-        /// <param name="address"></param>
-        /// <param name="fullName"></param>
-        /// <param name="items"></param>
-        /// <param name="amount"></param>
-        public Order(Address address, string fullName, List<Item> items, double amount)
+        /// <param name="address">Адрес доставки заказа.</param>
+        /// <param name="fullName">Полное имя покупателя.</param>
+        /// <param name="items">Список товаров в заказе.</param>
+        /// <param name="discountAmount">Сумма скидки на заказ.</param>
+        public Order(Address address, string fullName, List<Item> items, double discountAmount)
         {
             Id = IdGenerator.GetNewIdOrder();
             CreatedDate = DateTime.Now;
@@ -94,14 +70,18 @@ namespace ObjectOrientedPractics.Model
             Status = OrderStatus.New;
             Address = address;
             Items = items;
-            Amount = amount;
+            DiscountAmount = discountAmount;
+            foreach (var item in Items)
+            {
+                Amount += item.Cost;
+            }
         }
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Order"/>.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="createdDate"></param>
+        /// <param name="id">Идентификатор заказа.</param>
+        /// <param name="createdDate">Дата создания заказа.</param>
         public Order(int id, DateTime createdDate)
         {
             Id = id;

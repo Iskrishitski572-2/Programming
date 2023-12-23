@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Enums;
 using ObjectOrientedPractics.Model.Orders;
 using ObjectOrientedPractics.Services;
 using ObjectOrientedPractics.View.Controls;
@@ -145,7 +146,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 itemsListBox.Items.Add(item.Name);
             }
 
-            amountCounterLabel.Text = isPriority ? _currentPriorityOrder.Amount.ToString() : _currentOrder.Amount.ToString();
+            amountCounterLabel.Text = isPriority ? _currentPriorityOrder.Total.ToString() : _currentOrder.Total.ToString();
         }
 
         /// <summary>

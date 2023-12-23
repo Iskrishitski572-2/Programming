@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Services;
 using System.ComponentModel;
+using ObjectOrientedPractics.Model.Enums;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
