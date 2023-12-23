@@ -45,6 +45,7 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.amountCounterLabel = new System.Windows.Forms.Label();
             this.itemsListBox = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
             deliveryTimeLabel = new System.Windows.Forms.Label();
             priorityOptionsLabel = new System.Windows.Forms.Label();
@@ -54,22 +55,13 @@
             createdLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             selectedOrderLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // deliveryTimeComboBox
-            // 
-            this.deliveryTimeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.deliveryTimeComboBox.FormattingEnabled = true;
-            this.deliveryTimeComboBox.Location = new System.Drawing.Point(368, 37);
-            this.deliveryTimeComboBox.Name = "deliveryTimeComboBox";
-            this.deliveryTimeComboBox.Size = new System.Drawing.Size(121, 21);
-            this.deliveryTimeComboBox.TabIndex = 49;
-            this.deliveryTimeComboBox.SelectedIndexChanged += new System.EventHandler(this.DeliveryTimeComboBoxSelectedIndexChanged);
             // 
             // deliveryTimeLabel
             // 
             deliveryTimeLabel.AutoSize = true;
-            deliveryTimeLabel.Location = new System.Drawing.Point(270, 41);
+            deliveryTimeLabel.Location = new System.Drawing.Point(3, 51);
             deliveryTimeLabel.Name = "deliveryTimeLabel";
             deliveryTimeLabel.Size = new System.Drawing.Size(74, 13);
             deliveryTimeLabel.TabIndex = 48;
@@ -79,16 +71,85 @@
             // 
             priorityOptionsLabel.AutoSize = true;
             priorityOptionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            priorityOptionsLabel.Location = new System.Drawing.Point(270, 3);
+            priorityOptionsLabel.Location = new System.Drawing.Point(3, 0);
             priorityOptionsLabel.Name = "priorityOptionsLabel";
             priorityOptionsLabel.Size = new System.Drawing.Size(121, 17);
             priorityOptionsLabel.TabIndex = 47;
             priorityOptionsLabel.Text = "Priority Options";
             // 
+            // amountLabel
+            // 
+            amountLabel.AutoSize = true;
+            amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            amountLabel.Location = new System.Drawing.Point(9, 455);
+            amountLabel.Name = "amountLabel";
+            amountLabel.Size = new System.Drawing.Size(67, 17);
+            amountLabel.TabIndex = 39;
+            amountLabel.Text = "Amount:";
+            // 
+            // orderItemsLabel
+            // 
+            orderItemsLabel.AutoSize = true;
+            orderItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            orderItemsLabel.Location = new System.Drawing.Point(5, 311);
+            orderItemsLabel.Name = "orderItemsLabel";
+            orderItemsLabel.Size = new System.Drawing.Size(93, 17);
+            orderItemsLabel.TabIndex = 38;
+            orderItemsLabel.Text = "Order Items";
+            // 
+            // statusLabel
+            // 
+            statusLabel.AutoSize = true;
+            statusLabel.Location = new System.Drawing.Point(8, 95);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new System.Drawing.Size(40, 13);
+            statusLabel.TabIndex = 37;
+            statusLabel.Text = "Status:";
+            // 
+            // createdLabel
+            // 
+            createdLabel.AutoSize = true;
+            createdLabel.Location = new System.Drawing.Point(8, 63);
+            createdLabel.Name = "createdLabel";
+            createdLabel.Size = new System.Drawing.Size(47, 13);
+            createdLabel.TabIndex = 36;
+            createdLabel.Text = "Created:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(8, 34);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(21, 13);
+            idLabel.TabIndex = 35;
+            idLabel.Text = "ID:";
+            // 
+            // selectedOrderLabel
+            // 
+            selectedOrderLabel.AutoSize = true;
+            selectedOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            selectedOrderLabel.Location = new System.Drawing.Point(5, 3);
+            selectedOrderLabel.Name = "selectedOrderLabel";
+            selectedOrderLabel.Size = new System.Drawing.Size(118, 17);
+            selectedOrderLabel.TabIndex = 34;
+            selectedOrderLabel.Text = "Selected Order";
+            // 
+            // deliveryTimeComboBox
+            // 
+            this.deliveryTimeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.deliveryTimeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deliveryTimeComboBox.FormattingEnabled = true;
+            this.deliveryTimeComboBox.Location = new System.Drawing.Point(101, 47);
+            this.deliveryTimeComboBox.Name = "deliveryTimeComboBox";
+            this.deliveryTimeComboBox.Size = new System.Drawing.Size(96, 21);
+            this.deliveryTimeComboBox.TabIndex = 49;
+            this.deliveryTimeComboBox.SelectedIndexChanged += new System.EventHandler(this.DeliveryTimeComboBoxSelectedIndexChanged);
+            // 
             // clearButton
             // 
             this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearButton.Location = new System.Drawing.Point(470, 533);
+            this.clearButton.Location = new System.Drawing.Point(543, 533);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(92, 33);
             this.clearButton.TabIndex = 46;
@@ -152,63 +213,6 @@
             this.amountCounterLabel.TabIndex = 40;
             this.amountCounterLabel.Text = "0";
             // 
-            // amountLabel
-            // 
-            amountLabel.AutoSize = true;
-            amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            amountLabel.Location = new System.Drawing.Point(9, 455);
-            amountLabel.Name = "amountLabel";
-            amountLabel.Size = new System.Drawing.Size(67, 17);
-            amountLabel.TabIndex = 39;
-            amountLabel.Text = "Amount:";
-            // 
-            // orderItemsLabel
-            // 
-            orderItemsLabel.AutoSize = true;
-            orderItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            orderItemsLabel.Location = new System.Drawing.Point(5, 311);
-            orderItemsLabel.Name = "orderItemsLabel";
-            orderItemsLabel.Size = new System.Drawing.Size(93, 17);
-            orderItemsLabel.TabIndex = 38;
-            orderItemsLabel.Text = "Order Items";
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(8, 95);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(40, 13);
-            statusLabel.TabIndex = 37;
-            statusLabel.Text = "Status:";
-            // 
-            // createdLabel
-            // 
-            createdLabel.AutoSize = true;
-            createdLabel.Location = new System.Drawing.Point(8, 63);
-            createdLabel.Name = "createdLabel";
-            createdLabel.Size = new System.Drawing.Size(47, 13);
-            createdLabel.TabIndex = 36;
-            createdLabel.Text = "Created:";
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(8, 34);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(21, 13);
-            idLabel.TabIndex = 35;
-            idLabel.Text = "ID:";
-            // 
-            // selectedOrderLabel
-            // 
-            selectedOrderLabel.AutoSize = true;
-            selectedOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            selectedOrderLabel.Location = new System.Drawing.Point(5, 3);
-            selectedOrderLabel.Name = "selectedOrderLabel";
-            selectedOrderLabel.Size = new System.Drawing.Size(118, 17);
-            selectedOrderLabel.TabIndex = 34;
-            selectedOrderLabel.Text = "Selected Order";
-            // 
             // itemsListBox
             // 
             this.itemsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -216,26 +220,38 @@
             this.itemsListBox.FormattingEnabled = true;
             this.itemsListBox.Location = new System.Drawing.Point(8, 331);
             this.itemsListBox.Name = "itemsListBox";
-            this.itemsListBox.Size = new System.Drawing.Size(554, 121);
+            this.itemsListBox.Size = new System.Drawing.Size(627, 121);
             this.itemsListBox.TabIndex = 33;
             this.itemsListBox.SelectedIndexChanged += new System.EventHandler(this.ItemsListBoxSelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(deliveryTimeLabel);
+            this.panel1.Controls.Add(priorityOptionsLabel);
+            this.panel1.Controls.Add(this.deliveryTimeComboBox);
+            this.panel1.Location = new System.Drawing.Point(435, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 110);
+            this.panel1.TabIndex = 51;
             // 
             // addressControl1
             // 
             this.addressControl1.Address = null;
+            this.addressControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addressControl1.Location = new System.Drawing.Point(8, 119);
             this.addressControl1.Name = "addressControl1";
-            this.addressControl1.Size = new System.Drawing.Size(386, 186);
+            this.addressControl1.Size = new System.Drawing.Size(627, 186);
             this.addressControl1.TabIndex = 50;
             // 
             // PriorityOrdersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.addressControl1);
-            this.Controls.Add(this.deliveryTimeComboBox);
-            this.Controls.Add(deliveryTimeLabel);
-            this.Controls.Add(priorityOptionsLabel);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);
@@ -252,6 +268,8 @@
             this.Controls.Add(this.itemsListBox);
             this.Name = "PriorityOrdersTab";
             this.Size = new System.Drawing.Size(638, 567);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,5 +287,6 @@
         private System.Windows.Forms.Label amountCounterLabel;
         private System.Windows.Forms.ListBox itemsListBox;
         private Controls.AddressControl addressControl1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

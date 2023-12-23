@@ -25,7 +25,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private PriorityOrder _order;
 
-        public Customer customer = new Customer("Aboba naidenov", true, new Address(123456, "qwe", "qwer", "qwert", "qwerty", "qwertyn"));
+        public Customer customer = new Customer("Gena Kuzmin", true, new Address(234123, "Russia", "Bovr", "Lenina", "40", "666"));
 
 
         public PriorityOrdersTab()

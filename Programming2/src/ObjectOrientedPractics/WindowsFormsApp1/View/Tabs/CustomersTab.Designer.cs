@@ -45,8 +45,8 @@
             this.customersLayoutPanelLeft = new System.Windows.Forms.TableLayoutPanel();
             this.customersLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.customersLayoutPanelLeft.SuspendLayout();
@@ -80,11 +80,11 @@
             // selectedCustomerLabel
             // 
             this.selectedCustomerLabel.AutoSize = true;
-            this.selectedCustomerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectedCustomerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.selectedCustomerLabel.Location = new System.Drawing.Point(3, 0);
             this.selectedCustomerLabel.Name = "selectedCustomerLabel";
             this.selectedCustomerLabel.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.selectedCustomerLabel.Size = new System.Drawing.Size(139, 22);
+            this.selectedCustomerLabel.Size = new System.Drawing.Size(145, 23);
             this.selectedCustomerLabel.TabIndex = 3;
             this.selectedCustomerLabel.Text = "Selected customer";
             // 
@@ -150,11 +150,11 @@
             // customersLabel
             // 
             this.customersLabel.AutoSize = true;
-            this.customersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.customersLabel.Location = new System.Drawing.Point(-3, -3);
             this.customersLabel.Name = "customersLabel";
             this.customersLabel.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.customersLabel.Size = new System.Drawing.Size(83, 22);
+            this.customersLabel.Size = new System.Drawing.Size(87, 23);
             this.customersLabel.TabIndex = 2;
             this.customersLabel.Text = "Customers";
             // 
@@ -258,16 +258,6 @@
             this.panel1.Size = new System.Drawing.Size(394, 574);
             this.panel1.TabIndex = 1;
             // 
-            // addressControl1
-            // 
-            this.addressControl1.Address = null;
-            this.addressControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addressControl1.Location = new System.Drawing.Point(3, 206);
-            this.addressControl1.Name = "addressControl1";
-            this.addressControl1.Size = new System.Drawing.Size(379, 186);
-            this.addressControl1.TabIndex = 10;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -279,6 +269,16 @@
             this.checkBox1.Text = "Is Priority";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // addressControl1
+            // 
+            this.addressControl1.Address = null;
+            this.addressControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addressControl1.Location = new System.Drawing.Point(3, 206);
+            this.addressControl1.Name = "addressControl1";
+            this.addressControl1.Size = new System.Drawing.Size(379, 186);
+            this.addressControl1.TabIndex = 10;
             // 
             // CustomersTab
             // 

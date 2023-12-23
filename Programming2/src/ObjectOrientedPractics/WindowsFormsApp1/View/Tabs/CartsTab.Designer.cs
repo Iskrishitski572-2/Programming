@@ -79,10 +79,10 @@
             // itemsLabel
             // 
             this.itemsLabel.AutoSize = true;
-            this.itemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.itemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.itemsLabel.Location = new System.Drawing.Point(0, 0);
             this.itemsLabel.Name = "itemsLabel";
-            this.itemsLabel.Size = new System.Drawing.Size(44, 16);
+            this.itemsLabel.Size = new System.Drawing.Size(46, 17);
             this.itemsLabel.TabIndex = 19;
             this.itemsLabel.Text = "Items";
             // 
