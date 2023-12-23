@@ -68,6 +68,7 @@ namespace ObjectOrientedPractics.View.Tabs
             fullNameTextBox.ReadOnly = false;
             addressControl1.EnabledTextBox();
             customersListBox.Enabled = false;
+            checkBox1.Enabled = true;
         }
 
         /// <summary>
@@ -161,6 +162,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void EditCustomer()
         {
             _currentCustomer.Address = addressControl1.Address;
+            _currentCustomer.IsPriority = checkBox1.Checked;
             _currentCustomer.FullName = fullNameTextBox.Text;
 
             Customers[customersListBox.SelectedIndex] = _currentCustomer;
@@ -237,6 +239,7 @@ namespace ObjectOrientedPractics.View.Tabs
             idTextBox.Text = _currentCustomer.Id.ToString();
             fullNameTextBox.Text = _currentCustomer.FullName;
             addressControl1.Address = _currentCustomer.Address;
+            checkBox1.Checked = _currentCustomer.IsPriority;
             addressControl1.FillInfo();
         }
 
@@ -271,6 +274,7 @@ namespace ObjectOrientedPractics.View.Tabs
             idTextBox.Text = "";
             fullNameTextBox.Text = "";
             addressControl1.ClearTextBox();
+            checkBox1.Checked = false;
         }
 
         /// <summary>
@@ -341,6 +345,14 @@ namespace ObjectOrientedPractics.View.Tabs
                 {
                     customersListBox.Items.Add(customer.FullName);
                 }
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_switchValidation)
+            {
+                _currentCustomer.IsPriority = checkBox1.Checked;
             }
         }
     }

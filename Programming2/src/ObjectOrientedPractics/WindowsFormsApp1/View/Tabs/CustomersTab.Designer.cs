@@ -46,6 +46,7 @@
             this.customersLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.customersLayoutPanelLeft.SuspendLayout();
@@ -242,6 +243,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.addressControl1);
             this.panel1.Controls.Add(this.acceptButton);
             this.panel1.Controls.Add(this.cancelButton);
@@ -265,6 +267,17 @@
             this.addressControl1.Name = "addressControl1";
             this.addressControl1.Size = new System.Drawing.Size(379, 186);
             this.addressControl1.TabIndex = 10;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(6, 125);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(68, 17);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "Is Priority";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // CustomersTab
             // 
@@ -304,5 +317,6 @@
         private System.Windows.Forms.TableLayoutPanel customersLayoutPanelMain;
         private System.Windows.Forms.Panel panel1;
         private Controls.AddressControl addressControl1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

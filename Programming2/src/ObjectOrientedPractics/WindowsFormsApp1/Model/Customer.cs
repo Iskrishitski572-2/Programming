@@ -14,6 +14,11 @@ namespace ObjectOrientedPractics.Model
         private string _fullName;
 
         /// <summary>
+        /// 
+        /// </summary>
+        private bool _isPriority;
+
+        /// <summary>
         /// Адрес покупателя.
         /// </summary>
         private Address _address;
@@ -47,6 +52,9 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        public bool IsPriority { get { return _isPriority; } set { _isPriority = value; } }
+
+
         /// <summary>
         /// Возвращает и задает адрес.
         /// </summary>
@@ -69,6 +77,24 @@ namespace ObjectOrientedPractics.Model
         /// Возвращает и задает список заказов.
         /// </summary>
         public List<Order> Orders { get { return _orders; } set { _orders = value; } }
+
+        /// <summary>
+        /// Создает экземпляр класса <see cref="Customer"/>.
+        /// </summary>
+        /// <param name="fullName">Полное имя. Должно быть не более 200 символов.</param>
+        /// <param name="isPriority"></param>
+        /// <param name="address">Адрес. Должен быть не более 500 символов</param>
+        /// <param name="cart">Корзина.</param>
+        /// <param name="orders">Список заказов.</param>
+        public Customer(string fullName, bool isPriority, Address address, Cart cart = null, List<Order> orders = null)
+        {
+            Id = IdGenerator.GetNewIdCustomer();
+            IsPriority = isPriority;
+            FullName = fullName;
+            Address = address;
+            Cart = cart ?? new Cart();
+            Orders = orders ?? new List<Order>();
+        }
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Customer"/>.
