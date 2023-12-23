@@ -30,7 +30,7 @@
         {
             this.deliveryAddressLabel = new System.Windows.Forms.Label();
             this.postIndexLabel = new System.Windows.Forms.Label();
-            this.postIndexTextBox = new System.Windows.Forms.TextBox();
+            this.indexTextBox = new System.Windows.Forms.TextBox();
             this.countryTextBox = new System.Windows.Forms.TextBox();
             this.cityTextBox = new System.Windows.Forms.TextBox();
             this.streetTextBox = new System.Windows.Forms.TextBox();
@@ -62,13 +62,13 @@
             this.postIndexLabel.TabIndex = 1;
             this.postIndexLabel.Text = "Post index:";
             // 
-            // postIndexTextBox
+            // indexTextBox
             // 
-            this.postIndexTextBox.Location = new System.Drawing.Point(59, 57);
-            this.postIndexTextBox.Name = "postIndexTextBox";
-            this.postIndexTextBox.Size = new System.Drawing.Size(77, 20);
-            this.postIndexTextBox.TabIndex = 2;
-            this.postIndexTextBox.TextChanged += new System.EventHandler(this.IndexTextBoxTextChanged);
+            this.indexTextBox.Location = new System.Drawing.Point(59, 57);
+            this.indexTextBox.Name = "indexTextBox";
+            this.indexTextBox.Size = new System.Drawing.Size(77, 20);
+            this.indexTextBox.TabIndex = 2;
+            this.indexTextBox.TextChanged += new System.EventHandler(this.IndexTextBoxTextChanged);
             // 
             // countryTextBox
             // 
@@ -180,7 +180,7 @@
             this.Controls.Add(this.streetTextBox);
             this.Controls.Add(this.cityTextBox);
             this.Controls.Add(this.countryTextBox);
-            this.Controls.Add(this.postIndexTextBox);
+            this.Controls.Add(this.indexTextBox);
             this.Controls.Add(this.postIndexLabel);
             this.Controls.Add(this.deliveryAddressLabel);
             this.Name = "AddressControl";
@@ -194,7 +194,7 @@
 
         private System.Windows.Forms.Label deliveryAddressLabel;
         private System.Windows.Forms.Label postIndexLabel;
-        private System.Windows.Forms.TextBox postIndexTextBox;
+        private System.Windows.Forms.TextBox indexTextBox;
         private System.Windows.Forms.TextBox countryTextBox;
         private System.Windows.Forms.TextBox cityTextBox;
         private System.Windows.Forms.TextBox streetTextBox;

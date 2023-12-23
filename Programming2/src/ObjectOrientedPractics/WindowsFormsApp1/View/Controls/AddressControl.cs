@@ -1,25 +1,19 @@
 ﻿using ObjectOrientedPractics.Model;
 using System;
 using System.Drawing;
-using System.Net;
 using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Controls
 {
     /// <summary>
-    /// Пользовательский интерфейс адресса.
+    /// Пользовательский интерфейс адреса.
     /// </summary>
     public partial class AddressControl : UserControl
     {
         /// <summary>
-        /// Адресс.
-        /// </summary>
-        private Address _address;
-
-        /// <summary>
         /// Проверка на валидацию.
         /// </summary>
-        public bool _switchValidation = false;
+        public bool SwitchValidation = false;
 
         /// <summary>
         /// Событие.
@@ -27,19 +21,12 @@ namespace ObjectOrientedPractics.View.Controls
         public event EventHandler ValidationRequested;
 
         /// <summary>
-        /// 
+        /// Возвращает и задает адрес.
         /// </summary>
-        public Address Address
-        {
-            get { return _address; }
-            set
-            {
-                _address = value;
-            }
-        }
+        public Address Address { get; set; }
 
         /// <summary>
-        /// 
+        /// Конструктор класса <see cref="AddressControl"/>.
         /// </summary>
         public AddressControl()
         {
@@ -47,81 +34,29 @@ namespace ObjectOrientedPractics.View.Controls
         }
 
         /// <summary>
-        /// Включение всех элементов TextBox.
-        /// </summary>
-        public void EnabledTextBox()
-        {
-            postIndexTextBox.Enabled = true;
-            countryTextBox.Enabled = true;
-            cityTextBox.Enabled = true;
-            streetTextBox.Enabled = true;
-            buildingTextBox.Enabled = true;
-            apartmentTextBox.Enabled = true;
-        }
-
-        /// <summary>
-        /// Отключение всех элементов TextBox.
-        /// </summary>
-        public void DisabledTextBox()
-        {
-            postIndexTextBox.Enabled = false;
-            countryTextBox.Enabled = false;
-            cityTextBox.Enabled = false;
-            streetTextBox.Enabled = false;
-            buildingTextBox.Enabled = false;
-            apartmentTextBox.Enabled = false;
-        }
-
-        /// <summary>
-        /// Заполнения полей TextBox.
-        /// </summary>
-        public void FillInfo()
-        {
-            postIndexTextBox.Text = Address.Index.ToString();
-            countryTextBox.Text = Address.Country;
-            cityTextBox.Text = Address.City;
-            streetTextBox.Text = Address.Street;
-            buildingTextBox.Text = Address.Building;
-            apartmentTextBox.Text = Address.Apartment;
-        }
-
-        /// <summary>
-        /// Очистка всех полей.
-        /// </summary>
-        public void ClearTextBox()
-        {
-            postIndexTextBox.Text = "";
-            countryTextBox.Text = "";
-            cityTextBox.Text = "";
-            streetTextBox.Text = "";
-            buildingTextBox.Text = "";
-            apartmentTextBox.Text = "";
-        }
-
-        /// <summary>
         /// Валидация indexTextBox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void IndexTextBoxTextChanged(object sender, System.EventArgs e)
+        private void IndexTextBoxTextChanged(object sender, EventArgs e)
         {
-            if (_switchValidation == true)
+            if (SwitchValidation)
             {
                 try
                 {
-                    Address.Index = Convert.ToInt32(postIndexTextBox.Text);
-                    postIndexTextBox.BackColor = Color.White;
+                    Address.Index = Convert.ToInt32(indexTextBox.Text);
+                    indexTextBox.BackColor = Color.White;
                 }
                 catch
                 {
-                    postIndexTextBox.BackColor = Color.Red;
+                    indexTextBox.BackColor = Color.Red;
                 }
                 ValidationRequested?.Invoke(this, EventArgs.Empty);
 
             }
             else
             {
-                postIndexTextBox.BackColor = Color.White;
+                indexTextBox.BackColor = Color.White;
             }
         }
 
@@ -130,9 +65,9 @@ namespace ObjectOrientedPractics.View.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CountryTextBoxTextChanged(object sender, System.EventArgs e)
+        private void CountryTextBoxTextChanged(object sender, EventArgs e)
         {
-            if (_switchValidation == true)
+            if (SwitchValidation)
             {
                 try
                 {
@@ -157,9 +92,9 @@ namespace ObjectOrientedPractics.View.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CityTextBoxTextChanged(object sender, System.EventArgs e)
+        private void CityTextBoxTextChanged(object sender, EventArgs e)
         {
-            if (_switchValidation == true)
+            if (SwitchValidation)
             {
                 try
                 {
@@ -184,9 +119,9 @@ namespace ObjectOrientedPractics.View.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void StreetTextBoxTextChanged(object sender, System.EventArgs e)
+        private void StreetTextBoxTextChanged(object sender, EventArgs e)
         {
-            if (_switchValidation == true)
+            if (SwitchValidation)
             {
                 try
                 {
@@ -211,9 +146,9 @@ namespace ObjectOrientedPractics.View.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BuildingTextBoxTextChanged(object sender, System.EventArgs e)
+        private void BuildingTextBoxTextChanged(object sender, EventArgs e)
         {
-            if (_switchValidation == true)
+            if (SwitchValidation)
             {
                 try
                 {
@@ -237,9 +172,9 @@ namespace ObjectOrientedPractics.View.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ApartmentTextBoxTextChanged(object sender, System.EventArgs e)
+        private void ApartmentTextBoxTextChanged(object sender, EventArgs e)
         {
-            if (_switchValidation == true)
+            if (SwitchValidation)
             {
                 try
                 {
@@ -264,18 +199,66 @@ namespace ObjectOrientedPractics.View.Controls
         /// <returns></returns>
         public bool CheckAcceptButton()
         {
-            var index = postIndexTextBox.BackColor == Color.White;
+            var index = indexTextBox.BackColor == Color.White;
             var country = countryTextBox.BackColor == Color.White;
             var city = cityTextBox.BackColor == Color.White;
             var street = streetTextBox.BackColor == Color.White;
             var building = buildingTextBox.BackColor == Color.White;
             var apartment = apartmentTextBox.BackColor == Color.White;
 
-            if (index && country && city && street && building && apartment)
-            {
-                return true;
-            }
-            return false;
+            return index && country && city && street && building && apartment;
+        }
+
+        /// <summary>
+        /// Включение всех элементов TextBox.
+        /// </summary>
+        public void EnabledTextBox()
+        {
+            indexTextBox.ReadOnly = false;
+            countryTextBox.ReadOnly = false;
+            cityTextBox.ReadOnly = false;
+            streetTextBox.ReadOnly = false;
+            buildingTextBox.ReadOnly = false;
+            apartmentTextBox.ReadOnly = false;
+        }
+
+        /// <summary>
+        /// Отключение всех элементов TextBox.
+        /// </summary>
+        public void DisabledTextBox()
+        {
+            indexTextBox.ReadOnly = true;
+            countryTextBox.ReadOnly = true;
+            cityTextBox.ReadOnly = true;
+            streetTextBox.ReadOnly = true;
+            buildingTextBox.ReadOnly = true;
+            apartmentTextBox.ReadOnly = true;
+        }
+
+        /// <summary>
+        /// Заполнения полей TextBox.
+        /// </summary>
+        public void FillInfo()
+        {
+            indexTextBox.Text = Address.Index.ToString();
+            countryTextBox.Text = Address.Country;
+            cityTextBox.Text = Address.City;
+            streetTextBox.Text = Address.Street;
+            buildingTextBox.Text = Address.Building;
+            apartmentTextBox.Text = Address.Apartment;
+        }
+
+        /// <summary>
+        /// Очистка всех полей.
+        /// </summary>
+        public void ClearTextBox()
+        {
+            indexTextBox.Text = "";
+            countryTextBox.Text = "";
+            cityTextBox.Text = "";
+            streetTextBox.Text = "";
+            buildingTextBox.Text = "";
+            apartmentTextBox.Text = "";
         }
     }
 }

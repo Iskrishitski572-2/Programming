@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Orders;
 using ObjectOrientedPractics.Services;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// Список товаров.
         /// </summary>
         public List<Item> Items { get; set; }
+
+        private double _discountAmount = 0;
 
         /// <summary>
         /// Список покупателей.
@@ -68,8 +71,9 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentCustomer = Customers[customersComboBox.SelectedIndex];
                 CheckingEnablingButtons();
+                DiscountsListUpdate();
                 CartListUpdate();
-                AmmountUpdate();
+                AmountUpdate();
                 CheckingEnablingButtons();
             }
             catch
@@ -107,12 +111,12 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             _currentCustomer.Cart.Items.Add(_currentItem);
             CartListUpdate();
-            AmmountUpdate();
+            AmountUpdate();
             CheckingEnablingButtons();
         }
 
         /// <summary>
-        /// Событие создания соказа.
+        /// Событие создания заказа.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -122,16 +126,31 @@ namespace ObjectOrientedPractics.View.Tabs
             if (_currentCustomer.IsPriority)
             {
                 order = new PriorityOrder(_currentCustomer.Address, _currentCustomer.FullName,
-                    _currentCustomer.Cart.Items, _currentCustomer.Cart.Amount, "12");
+                    _currentCustomer.Cart.Items, _discountAmount, "12");
             }
             else
             {
-                order = new Order(_currentCustomer.Address, _currentCustomer.FullName, _currentCustomer.Cart.Items, _currentCustomer.Cart.Amount);
+                order = new Order(_currentCustomer.Address, _currentCustomer.FullName, _currentCustomer.Cart.Items, _discountAmount);
             }
+
+            foreach (var discount in _currentCustomer.Discounts)
+            {
+                discount.Update(_currentCustomer.Cart.Items);
+            }
+
+            var selectedIndices = discountsCheckedListBox.CheckedIndices;
+
+            foreach (var index in selectedIndices)
+            {
+                _currentCustomer.Discounts[Convert.ToInt32(index)].Apply(_currentCustomer.Cart.Items);
+            }
+
             _currentCustomer.Orders.Add(order);
-            _currentCustomer.Cart = new Cart();
+
+            _currentCustomer.Cart = new Cart();;
             CartListUpdate();
-            AmmountUpdate();
+            DiscountsListUpdate();
+            AmountUpdate();
             CheckingEnablingButtons();
         }
 
@@ -144,7 +163,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             _currentCustomer.Cart.Items.RemoveAt(cartListBox.SelectedIndex);
             CartListUpdate();
-            AmmountUpdate();
+            AmountUpdate();
             removeItemButton.Enabled = false;
             CheckingEnablingButtons();
         }
@@ -158,12 +177,12 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             _currentCustomer.Cart.Items.Clear();
             CartListUpdate();
-            AmmountUpdate();
+            AmountUpdate();
             CheckingEnablingButtons();
         }
 
         /// <summary>
-        /// Провекра включения кнопок.
+        /// Проверка включения кнопок.
         /// </summary>
         private void CheckingEnablingButtons()
         {
@@ -194,18 +213,49 @@ namespace ObjectOrientedPractics.View.Tabs
         public void CartListUpdate()
         {
             cartListBox.Items.Clear();
-            for (int i = 0; i < _currentCustomer.Cart.Items.Count; i++)
+            foreach (var item in _currentCustomer.Cart.Items)
             {
-                cartListBox.Items.Add(_currentCustomer.Cart.Items[i].Name);
+                cartListBox.Items.Add(item.Name);
+            }
+        }
+
+        public void DiscountsListUpdate()
+        {
+            discountsCheckedListBox.Items.Clear();
+            foreach (var discount in _currentCustomer.Discounts)
+            {
+                discountsCheckedListBox.Items.Add(discount.Info);
             }
         }
 
         /// <summary>
-        /// Обновление инормации о цене товаров в корзине.
+        /// Обновление информации о цене товаров в корзине.
         /// </summary>
-        public void AmmountUpdate()
+        public void AmountUpdate()
         {
             amountCounterLabel.Text = _currentCustomer.Cart.Amount.ToString();
+
+            try
+            {
+                _discountAmount = 0;
+                var selectedDiscountIndices = discountsCheckedListBox.CheckedIndices;
+
+                foreach (var selectedIndex in selectedDiscountIndices)
+                {
+                    _discountAmount += _currentCustomer.Discounts[Convert.ToInt32(selectedIndex)]
+                        .Calculate(_currentCustomer.Cart.Items);
+                }
+
+                discountCounterLabel.Text = _discountAmount.ToString();
+            }
+            catch
+            {
+                // Handle exceptions appropriately
+                // (It's better to provide a more specific exception type or handle specific scenarios.)
+            }
+
+            totalCounterLabel.Text = (_currentCustomer.Cart.Amount - _discountAmount).ToString();
+
         }
 
         /// <summary>
@@ -239,5 +289,27 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             customersComboBox.SelectedIndex = -1;
         }
+
+        /// <summary>
+        /// Обработчик изменения выбранных элементов в CheckedListBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckedListBoxSelectedIndexChanged(object sender, EventArgs e)
+        {
+            AmountUpdate();
+        }
+
+        /// <summary>
+        /// Обработчик изменения состояния элемента в CheckedListBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DiscountsCheckedListBoxItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            AmountUpdate();
+        }
+
+
     }
 }
