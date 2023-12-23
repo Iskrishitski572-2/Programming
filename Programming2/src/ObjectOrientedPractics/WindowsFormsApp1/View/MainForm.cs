@@ -19,7 +19,6 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
-
             customersTab1.Customers = _store.Customers;
             customersTab1.RefreshData();
 
@@ -37,6 +36,7 @@ namespace WindowsFormsApp1
             priorityOrdersTab1.UpdateOrders();
 
             ordersTab1.Customer = _store.Customers;
+            priorityOrdersTab1.UpdateTextBox();
         }
 
         /// <summary>

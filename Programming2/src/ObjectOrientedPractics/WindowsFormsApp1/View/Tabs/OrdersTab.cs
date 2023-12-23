@@ -23,6 +23,20 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         public List<Customer> Customer { get; set; }
 
+        private Order _currentOrder;
+
+        private PriorityOrder _currentPriorityOrder;
+
+        private object[] _time =
+        {
+            "9:00 - 11:00",
+            "11:00 - 13:00",
+            "13:00 - 15:00",
+            "15:00 - 17:00",
+            "17:00 - 19:00",
+            "19:00 - 21:00"
+        };
+
         /// <summary>
         /// Создает экземпляр OrdersTab.
         /// </summary>
@@ -30,8 +44,9 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             InitializeComponent();
             UpdateOrdersDataGridView();
-            var OrderStatus = Enum.GetNames(typeof(OrderStatus));
-            statusComboBox.Items.AddRange(OrderStatus);
+            var orderStatus = Enum.GetNames(typeof(OrderStatus));
+            statusComboBox.Items.AddRange(orderStatus);
+            deliveryTimeComboBox.Items.AddRange(_time);
         }
 
         /// <summary>
@@ -45,10 +60,14 @@ namespace ObjectOrientedPractics.View.Tabs
                 for (int j = 0; j < Customer[i].Orders.Count; j++)
                 {
                     Customer[i].Orders[j].FullName = Customer[i].FullName;
+                    Customer[i].Orders[j].Address = Customer[i].Address;
                     _orders.Add(Customer[i].Orders[j]);
                 }
             }
+
             _orders = _orders.OrderBy(o => o.Id).ToList();
+
+
         }
 
         /// <summary>
@@ -60,16 +79,15 @@ namespace ObjectOrientedPractics.View.Tabs
             for (int j = 0; j < _orders.Count; j++)
             {
                 var s = _orders[j].Address;
-                string addres = $"{s.Index}, {s.Country}, {s.City}, {s.Street}, {s.Building}, {s.Apartment}";
+                var address = $"{s.Index}, {s.Country}, {s.City}, {s.Street}, {s.Building}, {s.Apartment}";
                 ordersDataGridView.Rows.Add();
                 ordersDataGridView.Rows[j].Cells[0].Value = _orders[j].Id;
                 ordersDataGridView.Rows[j].Cells[1].Value = _orders[j].CreatedDate;
                 ordersDataGridView.Rows[j].Cells[2].Value = _orders[j].Status;
                 ordersDataGridView.Rows[j].Cells[3].Value = _orders[j].FullName;
-                ordersDataGridView.Rows[j].Cells[4].Value = addres;
+                ordersDataGridView.Rows[j].Cells[4].Value = address;
                 ordersDataGridView.Rows[j].Cells[5].Value = _orders[j].Amount;
             }
-
         }
 
         /// <summary>
@@ -80,6 +98,15 @@ namespace ObjectOrientedPractics.View.Tabs
         private void OrdersDataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = ordersDataGridView.CurrentCell.RowIndex;
+            if (_orders[index] is PriorityOrder priority)
+            {
+                panel1.Visible = true;
+            }
+            else
+            {
+                panel1.Visible = false;
+            }
+
             UpdateTextBox(index);
         }
 
@@ -89,20 +116,35 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="index"></param>
         private void UpdateTextBox(int index)
         {
-            idTextBox.Text = _orders[index].Id.ToString();
-            createdTextBox.Text = _orders[index].CreatedDate.ToString();
-            statusComboBox.Text = _orders[index].Status.ToString();
-            addressControl1.Address = _orders[index].Address;
+            var isPriority = _orders[index] is PriorityOrder priority;
+
+            if (isPriority)
+            {
+                _currentPriorityOrder = (PriorityOrder)_orders[index];
+                _currentOrder = null;
+                deliveryTimeComboBox.Text = _currentPriorityOrder.DeliveryTime;
+            }
+            else
+            {
+                deliveryTimeComboBox.SelectedIndex = -1;
+                _currentPriorityOrder = null;
+                _currentOrder = _orders[index];
+            }
+
+            idTextBox.Text = isPriority ? _currentPriorityOrder.Id.ToString() : _currentOrder.Id.ToString();
+            createdTextBox.Text = isPriority ? _currentPriorityOrder.CreatedDate.ToString() : _currentOrder.CreatedDate.ToString();
+            statusComboBox.Text = isPriority ? _currentPriorityOrder.Status.ToString() : _currentOrder.Status.ToString();
+            addressControl1.Address = isPriority ? _currentPriorityOrder.Address : _currentOrder.Address;
             addressControl1.FillInfo();
 
             itemsListBox.Items.Clear();
-            var items = _orders[index].Items;
+            var items = isPriority ? _currentPriorityOrder.Items : _currentOrder.Items; ;
             foreach (var item in items)
             {
                 itemsListBox.Items.Add(item.Name);
             }
 
-            amountCounterLabel.Text = _orders[index].Amount.ToString();
+            amountCounterLabel.Text = isPriority ? _currentPriorityOrder.Amount.ToString() : _currentOrder.Amount.ToString();
         }
 
         /// <summary>
@@ -112,12 +154,43 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void StatusComboBoxSelectedIndexChanged(object sender, EventArgs e)
         {
-            var index = ordersDataGridView.CurrentCell.RowIndex;
-            if (index != -1)
+            try
             {
-                _orders[index].Status = (OrderStatus)Enum.Parse(typeof(OrderStatus), statusComboBox.Text);
-                ordersDataGridView.Rows[index].Cells[2].Value = _orders[index].Status;
+                var index = ordersDataGridView.CurrentCell.RowIndex;
+                var isPriority = _orders[index] is PriorityOrder priority;
+                if (isPriority && index != -1)
+                {
+                    _currentPriorityOrder.Status = (OrderStatus)Enum.Parse(typeof(OrderStatus), statusComboBox.Text);
+                    ordersDataGridView.Rows[index].Cells[2].Value = _currentPriorityOrder.Status;
+                }
+                else if (index != -1)
+                {
+                    _currentOrder.Status = (OrderStatus)Enum.Parse(typeof(OrderStatus), statusComboBox.Text);
+                    ordersDataGridView.Rows[index].Cells[2].Value = _currentOrder.Status;
+                }
             }
+            catch
+            {
+                // ignored
+            }
+        }
+
+        private void deliveryTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var index = ordersDataGridView.CurrentCell.RowIndex;
+                var isPriority = _orders[index] is PriorityOrder priority;
+                if (isPriority && index != -1)
+                {
+                    _currentPriorityOrder.DeliveryTime = deliveryTimeComboBox.Text;
+                }
+            }
+            catch
+            {
+                // ignored
+            }
+
         }
     }
 }

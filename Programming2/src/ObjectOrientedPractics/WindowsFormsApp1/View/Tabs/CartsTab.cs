@@ -51,7 +51,10 @@ namespace ObjectOrientedPractics.View.Tabs
                 _currentItem = Items[itemsListBox.SelectedIndex];
                 CheckingEnablingButtons();
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         /// <summary>
@@ -115,7 +118,16 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void CreateOrderButtonClick(object sender, EventArgs e)
         {
-            Order order = new Order(_currentCustomer.Address, _currentCustomer.FullName, _currentCustomer.Cart.Items, _currentCustomer.Cart.Amount);
+            Order order;
+            if (_currentCustomer.IsPriority)
+            {
+                order = new PriorityOrder(_currentCustomer.Address, _currentCustomer.FullName,
+                    _currentCustomer.Cart.Items, _currentCustomer.Cart.Amount, "12");
+            }
+            else
+            {
+                order = new Order(_currentCustomer.Address, _currentCustomer.FullName, _currentCustomer.Cart.Items, _currentCustomer.Cart.Amount);
+            }
             _currentCustomer.Orders.Add(order);
             _currentCustomer.Cart = new Cart();
             CartListUpdate();

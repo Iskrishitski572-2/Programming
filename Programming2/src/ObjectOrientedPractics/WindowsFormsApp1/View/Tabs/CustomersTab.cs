@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
-using ObjectOrientedPractics.View.Controls;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -21,12 +20,12 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Флаг для смены события AcceptButton. Если он == true добавляем customer иначе редактируем.
         /// </summary>
-        private bool _flag = false;
+        private bool _flag;
 
         /// <summary>
         /// Проверка на валидацию.
         /// </summary>
-        private bool _switchValidation = false;
+        private bool _switchValidation;
 
         /// <summary>
         /// Возвращает и задает список покупателей.
@@ -66,9 +65,9 @@ namespace ObjectOrientedPractics.View.Tabs
         private void EnabledTextBox()
         {
             fullNameTextBox.ReadOnly = false;
+            checkBox1.Enabled = true;
             addressControl1.EnabledTextBox();
             customersListBox.Enabled = false;
-            checkBox1.Enabled = true;
         }
 
         /// <summary>
@@ -77,6 +76,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void DisabledTextBox()
         {
             fullNameTextBox.ReadOnly = true;
+            checkBox1.Enabled = false;
             addressControl1.DisabledTextBox();
             customersListBox.Enabled = true;
         }
@@ -109,6 +109,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void AddButtonClick(object sender, System.EventArgs e)
         {
             customersListBox.SelectedIndex = -1;
+            checkBox1.Checked = false;
             EnabledVisibleButtonsAccept();
             EnabledTextBox();
             DisabledButtons();
@@ -127,11 +128,13 @@ namespace ObjectOrientedPractics.View.Tabs
         private void AddCustomer()
         {
             var fullName = _currentCustomer.FullName;
+            var isPriority = _currentCustomer.IsPriority;
             var address = addressControl1.Address;
-            var customer = new Customer(fullName, address);
+            var customer = new Customer(fullName, isPriority, address);
 
             Customers.Add(customer);
             customersListBox.Items.Add(customer.FullName);
+
 
             DisabledVisibleButtonsAccept();
             EnabledButtons();
@@ -169,6 +172,7 @@ namespace ObjectOrientedPractics.View.Tabs
             customersListBox.Items[customersListBox.SelectedIndex] = _currentCustomer.FullName;
 
 
+
             DisabledVisibleButtonsAccept();
             EnabledButtons();
             DisabledTextBox();
@@ -183,6 +187,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             Customers.RemoveAt(customersListBox.SelectedIndex);
             customersListBox.Items.RemoveAt(customersListBox.SelectedIndex);
+
             ClearTextBox();
         }
 

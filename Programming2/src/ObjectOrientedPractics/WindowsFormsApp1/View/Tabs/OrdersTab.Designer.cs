@@ -47,6 +47,10 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.priorityOptionsLabel = new System.Windows.Forms.Label();
+            this.deliveryTimeComboBox = new System.Windows.Forms.ComboBox();
+            this.deliveryTimeLabel = new System.Windows.Forms.Label();
             this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
             amountLabel = new System.Windows.Forms.Label();
             orderItemsLabel = new System.Windows.Forms.Label();
@@ -56,6 +60,7 @@
             selectedOrderLabel = new System.Windows.Forms.Label();
             ordersLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // amountLabel
@@ -248,6 +253,46 @@
             this.ordersDataGridView.TabIndex = 15;
             this.ordersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersDataGridViewCellContentClick);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.priorityOptionsLabel);
+            this.panel1.Controls.Add(this.deliveryTimeComboBox);
+            this.panel1.Controls.Add(this.deliveryTimeLabel);
+            this.panel1.Location = new System.Drawing.Point(424, 485);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(232, 92);
+            this.panel1.TabIndex = 36;
+            // 
+            // priorityOptionsLabel
+            // 
+            this.priorityOptionsLabel.AutoSize = true;
+            this.priorityOptionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priorityOptionsLabel.Location = new System.Drawing.Point(3, 14);
+            this.priorityOptionsLabel.Name = "priorityOptionsLabel";
+            this.priorityOptionsLabel.Size = new System.Drawing.Size(121, 17);
+            this.priorityOptionsLabel.TabIndex = 32;
+            this.priorityOptionsLabel.Text = "Priority Options";
+            // 
+            // deliveryTimeComboBox
+            // 
+            this.deliveryTimeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deliveryTimeComboBox.FormattingEnabled = true;
+            this.deliveryTimeComboBox.Location = new System.Drawing.Point(83, 34);
+            this.deliveryTimeComboBox.Name = "deliveryTimeComboBox";
+            this.deliveryTimeComboBox.Size = new System.Drawing.Size(117, 21);
+            this.deliveryTimeComboBox.TabIndex = 34;
+            this.deliveryTimeComboBox.SelectedIndexChanged += new System.EventHandler(this.deliveryTimeComboBox_SelectedIndexChanged);
+            // 
+            // deliveryTimeLabel
+            // 
+            this.deliveryTimeLabel.AutoSize = true;
+            this.deliveryTimeLabel.Location = new System.Drawing.Point(3, 37);
+            this.deliveryTimeLabel.Name = "deliveryTimeLabel";
+            this.deliveryTimeLabel.Size = new System.Drawing.Size(74, 13);
+            this.deliveryTimeLabel.TabIndex = 33;
+            this.deliveryTimeLabel.Text = "Delivery Time:";
+            // 
             // addressControl1
             // 
             this.addressControl1.Address = null;
@@ -261,6 +306,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.addressControl1);
             this.Controls.Add(this.createdTextBox);
             this.Controls.Add(this.idTextBox);
@@ -278,6 +324,8 @@
             this.Name = "OrdersTab";
             this.Size = new System.Drawing.Size(680, 580);
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +346,9 @@
         private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.DataGridView ordersDataGridView;
         private Controls.AddressControl addressControl1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label priorityOptionsLabel;
+        private System.Windows.Forms.ComboBox deliveryTimeComboBox;
+        private System.Windows.Forms.Label deliveryTimeLabel;
     }
 }

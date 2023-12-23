@@ -97,22 +97,6 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
-        /// Создает экземпляр класса <see cref="Customer"/>.
-        /// </summary>
-        /// <param name="fullName">Полное имя. Должно быть не более 200 символов.</param>
-        /// <param name="address">Адрес. Должен быть не более 500 символов</param>
-        /// <param name="cart">Корзина.</param>
-        /// <param name="orders">Список заказов.</param>
-        public Customer(string fullName, Address address, Cart cart = null, List<Order> orders = null)
-        {
-            Id = IdGenerator.GetNewIdCustomer();
-            FullName = fullName;
-            Address = address;
-            Cart = cart ?? new Cart();
-            Orders = orders ?? new List<Order>();
-        }
-
-        /// <summary>
         /// Создает экземпляр класса <see cref="Customer"/>. Используются для десериализации JSON файла.
         /// </summary>
         /// <param name="id">Id.</param>

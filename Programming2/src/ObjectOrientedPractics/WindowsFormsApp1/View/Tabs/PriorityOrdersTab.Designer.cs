@@ -64,6 +64,7 @@
             this.deliveryTimeComboBox.Name = "deliveryTimeComboBox";
             this.deliveryTimeComboBox.Size = new System.Drawing.Size(121, 21);
             this.deliveryTimeComboBox.TabIndex = 49;
+            this.deliveryTimeComboBox.SelectedIndexChanged += new System.EventHandler(this.DeliveryTimeComboBoxSelectedIndexChanged);
             // 
             // deliveryTimeLabel
             // 
@@ -93,6 +94,7 @@
             this.clearButton.TabIndex = 46;
             this.clearButton.Text = "Clear Order";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.СlearButtonClick);
             // 
             // removeButton
             // 
@@ -103,6 +105,7 @@
             this.removeButton.TabIndex = 45;
             this.removeButton.Text = "Remove Item";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // addButton
             // 
@@ -112,6 +115,7 @@
             this.addButton.TabIndex = 44;
             this.addButton.Text = "Add Item";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButtonClick);
             // 
             // statusComboBox
             // 
@@ -214,6 +218,7 @@
             this.itemsListBox.Name = "itemsListBox";
             this.itemsListBox.Size = new System.Drawing.Size(554, 121);
             this.itemsListBox.TabIndex = 33;
+            this.itemsListBox.SelectedIndexChanged += new System.EventHandler(this.ItemsListBoxSelectedIndexChanged);
             // 
             // addressControl1
             // 
