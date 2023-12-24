@@ -98,6 +98,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.UpdateButtonClick);
             // 
             // button2
             // 
@@ -108,6 +109,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Apply";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ApplyButtonClick);
             // 
             // button1
             // 
@@ -118,6 +120,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.CalculateButtonClick);
             // 
             // DiscountsTab
             // 

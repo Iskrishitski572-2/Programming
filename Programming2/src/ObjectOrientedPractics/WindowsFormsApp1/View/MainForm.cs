@@ -31,12 +31,10 @@ namespace WindowsFormsApp1
             cartsTab1.Items = _store.Items;
             cartsTab1.RefreshData();
 
-            priorityOrdersTab1.Customers = _store.Customers;
-            priorityOrdersTab1.Items = _store.Items;
-            priorityOrdersTab1.UpdateOrders();
+
 
             ordersTab1.Customer = _store.Customers;
-            priorityOrdersTab1.UpdateTextBox();
+
         }
 
         /// <summary>
