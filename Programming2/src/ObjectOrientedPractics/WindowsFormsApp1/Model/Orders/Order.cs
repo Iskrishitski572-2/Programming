@@ -8,7 +8,7 @@ namespace ObjectOrientedPractics.Model.Orders
     /// <summary>
     /// Хранит данные о заказе.
     /// </summary>
-    public class Order
+    public class Order : IEquatable<Order>
     {
         /// <summary>
         /// Возвращает Id товара.
@@ -86,6 +86,14 @@ namespace ObjectOrientedPractics.Model.Orders
         {
             Id = id;
             CreatedDate = createdDate;
+        }
+
+
+        public bool Equals(Order other)
+        {
+            if (other == null) return false;
+
+            return other.Id == this.Id;
         }
     }
 }

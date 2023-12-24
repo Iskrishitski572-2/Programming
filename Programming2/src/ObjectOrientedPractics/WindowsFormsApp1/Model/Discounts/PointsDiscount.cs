@@ -7,7 +7,7 @@ namespace ObjectOrientedPractics.Model.Discounts
     /// <summary>
     /// 
     /// </summary>
-    public class PointsDiscount : IDiscount
+    public class PointsDiscount : IDiscount, IComparable<PointsDiscount>
     {
         /// <summary>
         /// Количество баллов лояльности.
@@ -65,6 +65,13 @@ namespace ObjectOrientedPractics.Model.Discounts
             var earnedPoints = (int)Math.Ceiling(totalCost * 0.1);
 
             Points += earnedPoints;
+        }
+
+        public int CompareTo(PointsDiscount other)
+        {
+            if (other == null) return 1;
+
+            return this.Points.CompareTo(other.Points);
         }
 
         /// <summary>
