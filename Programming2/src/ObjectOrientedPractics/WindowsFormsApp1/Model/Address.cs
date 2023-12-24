@@ -1,4 +1,5 @@
-﻿using ObjectOrientedPractics.Services;
+﻿using System;
+using ObjectOrientedPractics.Services;
 using System.Text.RegularExpressions;
 
 namespace ObjectOrientedPractics.Model
@@ -6,7 +7,7 @@ namespace ObjectOrientedPractics.Model
     /// <summary>
     /// Хранит данные о адрессе.
     /// </summary>
-    public class Address
+    public class Address : ICloneable, IEquatable<Address>
     {
         /// <summary>
         /// Почтовый индекс.
@@ -43,7 +44,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public int Index
         {
-            get { return _index; }
+            get => _index;
             set
             {
                 Regex regex = new Regex(@"\b\d{6}\b");
@@ -61,7 +62,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public string Country
         {
-            get { return _country; }
+            get => _country;
             set
             {
                 ValueValidator.AssertStringOnLength(value, 50, nameof(Country));
@@ -74,7 +75,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public string City
         {
-            get { return _city; }
+            get => _city;
             set
             {
                 ValueValidator.AssertStringOnLength(value, 50, nameof(City));
@@ -87,7 +88,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public string Street
         {
-            get { return _street; }
+            get => _street;
             set
             {
                 ValueValidator.AssertStringOnLength(value, 100, nameof(Street));
@@ -100,7 +101,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public string Building
         {
-            get { return _building; }
+            get => _building;
             set
             {
                 ValueValidator.AssertStringOnLength(value, 10, nameof(Building));
@@ -113,7 +114,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         public string Apartment
         {
-            get { return _apartment; }
+            get => _apartment;
             set
             {
                 ValueValidator.AssertStringOnLength(value, 10, nameof(Apartment));
@@ -144,5 +145,22 @@ namespace ObjectOrientedPractics.Model
         /// Создают экземпляр класса <see cref="Address"/>.
         /// </summary>
         public Address() { }
+
+        public object Clone()
+        {
+            return new Address(this.Index, this.Country, this.City, this.Street, this.Building, this.Apartment);
+        }
+
+        public bool Equals(Address other)
+        {
+            if (other == null) return false;
+
+            return other.Street == this.Street &&
+                   other.Apartment == this.Apartment &&
+                   other.Building == this.Building &&
+                   other.City == this.City &&
+                   other.Country == this.Country &&
+                   other.Index == this.Index;
+        }
     }
 }

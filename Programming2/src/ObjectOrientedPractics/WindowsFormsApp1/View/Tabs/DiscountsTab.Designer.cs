@@ -42,7 +42,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(39, 117);
+            this.label2.Location = new System.Drawing.Point(16, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 17);
             this.label2.TabIndex = 15;
@@ -52,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(39, 89);
+            this.label1.Location = new System.Drawing.Point(16, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 17);
             this.label1.TabIndex = 14;
@@ -62,7 +62,7 @@
             // 
             this.discountAmmountLabel.AutoSize = true;
             this.discountAmmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.discountAmmountLabel.Location = new System.Drawing.Point(180, 117);
+            this.discountAmmountLabel.Location = new System.Drawing.Point(158, 115);
             this.discountAmmountLabel.Name = "discountAmmountLabel";
             this.discountAmmountLabel.Size = new System.Drawing.Size(17, 17);
             this.discountAmmountLabel.TabIndex = 13;
@@ -72,7 +72,7 @@
             // 
             this.amountLabel.AutoSize = true;
             this.amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amountLabel.Location = new System.Drawing.Point(181, 89);
+            this.amountLabel.Location = new System.Drawing.Point(158, 87);
             this.amountLabel.Name = "amountLabel";
             this.amountLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.amountLabel.Size = new System.Drawing.Size(17, 17);
@@ -83,7 +83,7 @@
             // 
             this.infoLabel.AutoSize = true;
             this.infoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoLabel.Location = new System.Drawing.Point(39, 17);
+            this.infoLabel.Location = new System.Drawing.Point(16, 15);
             this.infoLabel.Name = "infoLabel";
             this.infoLabel.Size = new System.Drawing.Size(40, 17);
             this.infoLabel.TabIndex = 11;
@@ -92,7 +92,8 @@
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(276, 44);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(253, 44);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 31);
             this.button3.TabIndex = 10;
@@ -103,7 +104,8 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(159, 44);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(136, 44);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 31);
             this.button2.TabIndex = 9;
@@ -114,7 +116,8 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(42, 44);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(19, 44);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 31);
             this.button1.TabIndex = 8;
@@ -126,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.discountAmmountLabel);
@@ -135,7 +139,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "DiscountsTab";
-            this.Size = new System.Drawing.Size(427, 150);
+            this.Size = new System.Drawing.Size(385, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
 

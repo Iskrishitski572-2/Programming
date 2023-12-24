@@ -211,7 +211,7 @@
             // 
             this.discountAmountLabel.AutoSize = true;
             this.discountAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.discountAmountLabel.Location = new System.Drawing.Point(520, 391);
+            this.discountAmountLabel.Location = new System.Drawing.Point(526, 391);
             this.discountAmountLabel.Name = "discountAmountLabel";
             this.discountAmountLabel.Size = new System.Drawing.Size(126, 16);
             this.discountAmountLabel.TabIndex = 25;

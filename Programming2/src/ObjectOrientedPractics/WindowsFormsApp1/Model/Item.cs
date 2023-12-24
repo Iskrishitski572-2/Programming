@@ -1,19 +1,14 @@
-﻿using ObjectOrientedPractics.Model.Enums;
+﻿using System;
 using ObjectOrientedPractics.Services;
-
+using ObjectOrientedPractics.Model.Enums;
 
 namespace ObjectOrientedPractics.Model
 {
     /// <summary>
     /// Хранит данные о товаре.
     /// </summary>
-    public class Item
+    public class Item : ICloneable, IEquatable<Item>, IComparable<Item>
     {
-        /// <summary>
-        /// Id товара.
-        /// </summary>
-        private int _id;
-
         /// <summary>
         /// Названия товара.
         /// </summary>
@@ -30,19 +25,14 @@ namespace ObjectOrientedPractics.Model
         private double _cost;
 
         /// <summary>
-        /// Категория товара.
-        /// </summary>
-        private Category _category;
-
-        /// <summary>
         /// Возвращает Id товара.
         /// </summary>
-        public int Id { get { return _id; } private set { _id = value; } }
+        public int Id { get; private set; }
 
         /// <summary>
         /// Возвращает и задает категорию товара.
         /// </summary>
-        public Category Category { get { return _category; } set { _category = value; } }
+        public Category Category { get; set; }
 
         /// <summary>
         /// Возвращает и задает названия товара. Должно быть не более 200
@@ -106,7 +96,6 @@ namespace ObjectOrientedPractics.Model
         /// Создает экземпляр класса <see cref="Item"/>.
         /// </summary>
         /// <param name="id"></param>
-
         public Item(int id)
         {
             Id = id;
@@ -116,5 +105,31 @@ namespace ObjectOrientedPractics.Model
         /// Создает пустой экземпляр класса <see cref="Item"/>.
         /// </summary>
         public Item() { }
+
+        public object Clone()
+        {
+            var clone = new Item(this.Id)
+            {
+                Name = this.Name,
+                Category = this.Category,
+                Info = this.Info,
+                Cost = this.Cost
+            };
+            return clone;
+        }
+
+        public bool Equals(Item other)
+        {
+            if (other == null) return false;
+
+            return this.Name == other.Name;
+        }
+
+        public int CompareTo(Item other)
+        {
+            if (other == null) return 1;
+
+            return this.Cost.CompareTo(other.Cost);
+        }
     }
 }

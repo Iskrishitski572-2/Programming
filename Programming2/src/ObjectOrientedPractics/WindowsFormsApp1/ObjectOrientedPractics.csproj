@@ -198,6 +198,7 @@
     <Content Include="Documentation\Diagram\Practics3.png" />
     <Content Include="Documentation\Diagram\Practics4.png" />
     <Content Include="Documentation\Diagram\Practics5.png" />
+    <Content Include="Documentation\Diagram\Practics6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
