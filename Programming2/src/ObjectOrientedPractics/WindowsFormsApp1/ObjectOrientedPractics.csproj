@@ -76,11 +76,13 @@
     <Compile Include="Model\Discounts\PointsDiscount.cs" />
     <Compile Include="Model\Enums\Category.cs" />
     <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Enums\Sorting.cs" />
     <Compile Include="Model\IDiscount.cs" />
     <Compile Include="Model\Orders\Order.cs" />
     <Compile Include="Model\Enums\OrderStatus.cs" />
     <Compile Include="Model\Orders\PriorityOrder.cs" />
     <Compile Include="Model\Store.cs" />
+    <Compile Include="Services\DataTools.cs" />
     <Compile Include="View\Controls\AddressControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

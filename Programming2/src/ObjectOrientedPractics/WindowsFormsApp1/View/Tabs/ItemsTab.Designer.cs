@@ -30,13 +30,18 @@
         {
             this.customersLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.customersLayoutPanelLeft = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.itemsListBox = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.findOrderTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.findComboBox = new System.Windows.Forms.ComboBox();
+            this.findTextBox = new System.Windows.Forms.TextBox();
+            this.orderbyLabel = new System.Windows.Forms.Label();
+            this.findLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.categoryLabel = new System.Windows.Forms.Label();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
@@ -53,8 +58,9 @@
             this.idLabel = new System.Windows.Forms.Label();
             this.customersLayoutPanelMain.SuspendLayout();
             this.customersLayoutPanelLeft.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.findOrderTableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,43 +83,45 @@
             // 
             this.customersLayoutPanelLeft.ColumnCount = 1;
             this.customersLayoutPanelLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.customersLayoutPanelLeft.Controls.Add(this.tableLayoutPanel1, 0, 2);
+            this.customersLayoutPanelLeft.Controls.Add(this.tableLayoutPanel2, 0, 3);
             this.customersLayoutPanelLeft.Controls.Add(this.itemsListBox, 0, 1);
             this.customersLayoutPanelLeft.Controls.Add(this.panel2, 0, 0);
+            this.customersLayoutPanelLeft.Controls.Add(this.findOrderTableLayoutPanel, 0, 2);
             this.customersLayoutPanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customersLayoutPanelLeft.Location = new System.Drawing.Point(3, 3);
             this.customersLayoutPanelLeft.Name = "customersLayoutPanelLeft";
-            this.customersLayoutPanelLeft.RowCount = 3;
-            this.customersLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.921538F));
-            this.customersLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.0505F));
-            this.customersLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.027967F));
+            this.customersLayoutPanelLeft.RowCount = 4;
+            this.customersLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.407403F));
+            this.customersLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.29965F));
+            this.customersLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.80139F));
+            this.customersLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.93728F));
             this.customersLayoutPanelLeft.Size = new System.Drawing.Size(274, 574);
             this.customersLayoutPanelLeft.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel2
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.addButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.editButton, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.removeButton, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 530);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 41);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.addButton, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.editButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.removeButton, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 496);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(268, 75);
+            this.tableLayoutPanel2.TabIndex = 3;
             // 
             // addButton
             // 
             this.addButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addButton.Location = new System.Drawing.Point(3, 3);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(83, 35);
+            this.addButton.Size = new System.Drawing.Size(83, 69);
             this.addButton.TabIndex = 0;
             this.addButton.Text = "ADD";
             this.addButton.UseVisualStyleBackColor = true;
@@ -124,7 +132,7 @@
             this.editButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.editButton.Location = new System.Drawing.Point(92, 3);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(83, 35);
+            this.editButton.Size = new System.Drawing.Size(83, 69);
             this.editButton.TabIndex = 1;
             this.editButton.Text = "EDIT";
             this.editButton.UseVisualStyleBackColor = true;
@@ -135,7 +143,7 @@
             this.removeButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.removeButton.Location = new System.Drawing.Point(181, 3);
             this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(84, 35);
+            this.removeButton.Size = new System.Drawing.Size(84, 69);
             this.removeButton.TabIndex = 2;
             this.removeButton.Text = "REMOVE";
             this.removeButton.UseVisualStyleBackColor = true;
@@ -145,9 +153,9 @@
             // 
             this.itemsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemsListBox.FormattingEnabled = true;
-            this.itemsListBox.Location = new System.Drawing.Point(3, 25);
+            this.itemsListBox.Location = new System.Drawing.Point(3, 22);
             this.itemsListBox.Name = "itemsListBox";
-            this.itemsListBox.Size = new System.Drawing.Size(268, 499);
+            this.itemsListBox.Size = new System.Drawing.Size(268, 407);
             this.itemsListBox.TabIndex = 1;
             this.itemsListBox.SelectedIndexChanged += new System.EventHandler(this.ItemsListBoxSelectedIndexChanged);
             // 
@@ -156,19 +164,81 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 16);
+            this.panel2.Size = new System.Drawing.Size(200, 13);
             this.panel2.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(-3, -3);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.label1.Size = new System.Drawing.Size(49, 23);
+            this.label1.Size = new System.Drawing.Size(45, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Items";
+            // 
+            // findOrderTableLayoutPanel
+            // 
+            this.findOrderTableLayoutPanel.ColumnCount = 2;
+            this.findOrderTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.findOrderTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.findOrderTableLayoutPanel.Controls.Add(this.findComboBox, 1, 0);
+            this.findOrderTableLayoutPanel.Controls.Add(this.findTextBox, 1, 1);
+            this.findOrderTableLayoutPanel.Controls.Add(this.findLabel, 0, 0);
+            this.findOrderTableLayoutPanel.Controls.Add(this.orderbyLabel, 0, 1);
+            this.findOrderTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.findOrderTableLayoutPanel.Location = new System.Drawing.Point(3, 435);
+            this.findOrderTableLayoutPanel.Name = "findOrderTableLayoutPanel";
+            this.findOrderTableLayoutPanel.RowCount = 2;
+            this.findOrderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.findOrderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.findOrderTableLayoutPanel.Size = new System.Drawing.Size(268, 55);
+            this.findOrderTableLayoutPanel.TabIndex = 4;
+            // 
+            // findComboBox
+            // 
+            this.findComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.findComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.findComboBox.FormattingEnabled = true;
+            this.findComboBox.Location = new System.Drawing.Point(68, 3);
+            this.findComboBox.Name = "findComboBox";
+            this.findComboBox.Size = new System.Drawing.Size(197, 21);
+            this.findComboBox.TabIndex = 10;
+            this.findComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // findTextBox
+            // 
+            this.findTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.findTextBox.Location = new System.Drawing.Point(68, 30);
+            this.findTextBox.Name = "findTextBox";
+            this.findTextBox.Size = new System.Drawing.Size(197, 20);
+            this.findTextBox.TabIndex = 13;
+            this.findTextBox.TextChanged += new System.EventHandler(this.FindTextBoxTextChanged);
+            // 
+            // orderbyLabel
+            // 
+            this.orderbyLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.orderbyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderbyLabel.Location = new System.Drawing.Point(6, 27);
+            this.orderbyLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.orderbyLabel.Name = "orderbyLabel";
+            this.orderbyLabel.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.orderbyLabel.Size = new System.Drawing.Size(59, 28);
+            this.orderbyLabel.TabIndex = 11;
+            this.orderbyLabel.Text = "Order by:";
+            // 
+            // findLabel
+            // 
+            this.findLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.findLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.findLabel.Location = new System.Drawing.Point(6, 0);
+            this.findLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.findLabel.Name = "findLabel";
+            this.findLabel.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.findLabel.Size = new System.Drawing.Size(59, 27);
+            this.findLabel.TabIndex = 14;
+            this.findLabel.Text = "Find:";
             // 
             // panel1
             // 
@@ -218,7 +288,7 @@
             // 
             this.acceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.acceptButton.Location = new System.Drawing.Point(3, 533);
+            this.acceptButton.Location = new System.Drawing.Point(6, 530);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(83, 35);
             this.acceptButton.TabIndex = 9;
@@ -231,7 +301,7 @@
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(296, 533);
+            this.cancelButton.Location = new System.Drawing.Point(296, 530);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(83, 35);
             this.cancelButton.TabIndex = 8;
@@ -293,7 +363,7 @@
             this.nameTextBox.Multiline = true;
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
-            this.nameTextBox.Size = new System.Drawing.Size(370, 128);
+            this.nameTextBox.Size = new System.Drawing.Size(373, 128);
             this.nameTextBox.TabIndex = 4;
             this.nameTextBox.TextChanged += new System.EventHandler(this.NameTextBoxTextChanged);
             // 
@@ -347,9 +417,11 @@
             this.Size = new System.Drawing.Size(680, 580);
             this.customersLayoutPanelMain.ResumeLayout(false);
             this.customersLayoutPanelLeft.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.findOrderTableLayoutPanel.ResumeLayout(false);
+            this.findOrderTableLayoutPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -360,10 +432,6 @@
 
         private System.Windows.Forms.TableLayoutPanel customersLayoutPanelMain;
         private System.Windows.Forms.TableLayoutPanel customersLayoutPanelLeft;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.ListBox itemsListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -381,5 +449,14 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ComboBox categoryComboBox;
         private System.Windows.Forms.Label categoryLabel;
+        private System.Windows.Forms.Label orderbyLabel;
+        private System.Windows.Forms.ComboBox findComboBox;
+        private System.Windows.Forms.Label findLabel;
+        private System.Windows.Forms.TextBox findTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.TableLayoutPanel findOrderTableLayoutPanel;
     }
 }
